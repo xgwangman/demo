@@ -1,0 +1,11 @@
+*~
+*.swp
+.DS_Store
+npm-debug.log
+lerna-debug.log
+npm-debug.log*
+dist/
+coverage/
+node_modules/
+examples/test
+.idea/
