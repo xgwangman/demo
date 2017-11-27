@@ -84,22 +84,22 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var demos = {
-	  base: {
-	    mtop: __webpack_require__(28),
-	    fetch: __webpack_require__(60),
-	    jsonp: __webpack_require__(61),
-	    storage: __webpack_require__(62)
-	  },
-	  interface: {
-	    navigator: __webpack_require__(63),
-	    toast: __webpack_require__(64)
-	  },
 	  device: {
-	    env: __webpack_require__(65),
-	    geolocation: __webpack_require__(66),
-	    network: __webpack_require__(67)
+	    env: __webpack_require__(28),
+	    geolocation: __webpack_require__(60),
+	    network: __webpack_require__(61)
 	  },
-	  other: {
+	  'page-control': {
+	    navigator: __webpack_require__(62),
+	    toast: __webpack_require__(63)
+	  },
+	  base: {
+	    fetch: __webpack_require__(64),
+	    jsonp: __webpack_require__(65),
+	    storage: __webpack_require__(66)
+	  },
+	  platform: {
+	    mtop: __webpack_require__(67),
 	    wangwang: __webpack_require__(68),
 	    user: __webpack_require__(69),
 	    scancode: __webpack_require__(70)
@@ -2823,79 +2823,39 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var MtopDemo = function (_Component) {
-	  _inherits(MtopDemo, _Component);
+	var ENV = function (_Component) {
+	  _inherits(ENV, _Component);
 
-	  function MtopDemo() {
-	    var _ref;
+	  function ENV() {
+	    _classCallCheck(this, ENV);
 
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, MtopDemo);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MtopDemo.__proto__ || Object.getPrototypeOf(MtopDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      data: null
-	    }, _this.fetch = function () {
-	      _index.mtop.request({
-	        api: 'mtop.user.getUserSimple',
-	        type: 'POST',
-	        secType: 2,
-	        date: {
-	          foo: 'bar'
-	        }
-	      }, function (json) {
-	        _this.setState({
-	          data: JSON.stringify(json)
-	        });
-	      });
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	    return _possibleConstructorReturn(this, (ENV.__proto__ || Object.getPrototypeOf(ENV)).apply(this, arguments));
 	  }
 
-	  _createClass(MtopDemo, [{
+	  _createClass(ENV, [{
 	    key: 'render',
 	    value: function render() {
 	      return (0, _rax.createElement)(
 	        _tileView2.default,
 	        { style: _style2.default.app },
 	        (0, _rax.createElement)(
-	          _tileText2.default,
-	          { style: demoStyles.text },
-	          'Mtop \u8BF7\u6C42\u7ED3\u679C\uFF1A',
-	          this.state.data
-	        ),
-	        (0, _rax.createElement)(
 	          _tileView2.default,
-	          { clickable: true, onPress: this.fetch, onClick: this.fetch, style: demoStyles.button },
-	          '\u53D1\u8D77 Mtop \u8BF7\u6C42'
+	          null,
+	          '\u5F53\u524D\u73AF\u5883\u662F\uFF1A ',
+	          (0, _rax.createElement)(
+	            _tileText2.default,
+	            { style: { color: '#F60', fontSize: 50 } },
+	            _index.isWeex ? 'Weex' : 'Web'
+	          )
 	        )
 	      );
 	    }
 	  }]);
 
-	  return MtopDemo;
+	  return ENV;
 	}(_rax.Component);
 
-	var demoStyles = {
-	  text: {
-	    paddingLeft: 20,
-	    paddingRight: 20
-	  },
-	  button: {
-	    borderWidth: 2,
-	    borderColor: '#CCC',
-	    borderStyle: 'solid',
-	    paddingLeft: 20,
-	    paddingRight: 20,
-	    marginTop: 40,
-	    backgroundColor: '#EEE'
-	  }
-	};
-
-	exports.default = MtopDemo;
+	exports.default = ENV;
 	module.exports = exports['default'];
 
 /***/ }),
@@ -4112,6 +4072,10 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _rax = __webpack_require__(1);
@@ -4138,41 +4102,52 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	;
+	var GeolocationDemo = function (_Component) {
+	  _inherits(GeolocationDemo, _Component);
 
-	var FetchDemo = function (_Component) {
-	  _inherits(FetchDemo, _Component);
-
-	  function FetchDemo() {
+	  function GeolocationDemo() {
 	    var _ref;
 
 	    var _temp, _this, _ret;
 
-	    _classCallCheck(this, FetchDemo);
+	    _classCallCheck(this, GeolocationDemo);
 
 	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FetchDemo.__proto__ || Object.getPrototypeOf(FetchDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      fetchData: null,
-	      jsonData: null
-	    }, _this.doFetch = function () {
-	      (0, _index.fetch)('https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js').then(function (response) {
-	        return response.text();
-	      }).then(function (text) {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = GeolocationDemo.__proto__ || Object.getPrototypeOf(GeolocationDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      isFetching: false,
+	      crd: {
+	        latitude: '',
+	        longitude: '',
+	        accuracy: ''
+	      }
+	    }, _this.fetch = function () {
+	      if (_this.state.isFetching) return;
+	      _this.setState({
+	        isFetching: true
+	      });
+	      _index.geolocation.getCurrentPosition(function (data) {
+	        console.log(data);
 	        _this.setState({
-	          fetchData: text.slice(1, 100) + '...'
+	          isFetching: false,
+	          crd: data.coords
 	        });
-	      }).catch(function (ex) {
+	      }, function (err) {
 	        _this.setState({
-	          fetchData: JSON.stringify(ex)
+	          isFetching: false
 	        });
+	        console.log(err);
+	      }, {
+	        enableHighAccuracy: true,
+	        timeout: 3000,
+	        maximumAge: 0
 	      });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
-	  _createClass(FetchDemo, [{
+	  _createClass(GeolocationDemo, [{
 	    key: 'render',
 	    value: function render() {
 	      return (0, _rax.createElement)(
@@ -4180,27 +4155,36 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	        { style: _style2.default.app },
 	        (0, _rax.createElement)(
 	          _tileText2.default,
-	          { style: demoStyles.text },
-	          'Fetch \u8BF7\u6C42\u7ED3\u679C\uFF1A',
-	          this.state.fetchData
+	          null,
+	          '\u7EAC\u5EA6: ',
+	          this.state.crd.latitude
+	        ),
+	        (0, _rax.createElement)(
+	          _tileText2.default,
+	          null,
+	          '\u7ECF\u5EA6: ',
+	          this.state.crd.longitude
+	        ),
+	        (0, _rax.createElement)(
+	          _tileText2.default,
+	          null,
+	          '\u7CBE\u5EA6: ',
+	          this.state.crd.accuracy
 	        ),
 	        (0, _rax.createElement)(
 	          _tileView2.default,
-	          { clickable: true, onPress: this.doFetch, onClick: this.doFetch, style: demoStyles.button },
-	          '\u53D1\u8D77 Fetch \u8BF7\u6C42'
+	          { clickable: true, onPress: this.fetch, onClick: this.fetch, style: demoStyles.button },
+	          '\u83B7\u53D6\u5730\u7406\u4F4D\u7F6E',
+	          this.state.isFetching ? "(获取中...)" : null
 	        )
 	      );
 	    }
 	  }]);
 
-	  return FetchDemo;
+	  return GeolocationDemo;
 	}(_rax.Component);
 
 	var demoStyles = {
-	  text: {
-	    paddingLeft: 20,
-	    paddingRight: 20
-	  },
 	  button: {
 	    borderWidth: 2,
 	    borderColor: '#CCC',
@@ -4208,126 +4192,15 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	    paddingLeft: 20,
 	    paddingRight: 20,
 	    marginTop: 40,
-	    marginBottom: 40,
 	    backgroundColor: '#EEE'
 	  }
 	};
 
-	module.exports = FetchDemo;
+	exports.default = GeolocationDemo;
+	module.exports = exports['default'];
 
 /***/ }),
 /* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _rax = __webpack_require__(1);
-
-	var _tileView = __webpack_require__(2);
-
-	var _tileView2 = _interopRequireDefault(_tileView);
-
-	var _tileText = __webpack_require__(5);
-
-	var _tileText2 = _interopRequireDefault(_tileText);
-
-	var _style = __webpack_require__(29);
-
-	var _style2 = _interopRequireDefault(_style);
-
-	var _index = __webpack_require__(30);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var JsonpDemo = function (_Component) {
-	  _inherits(JsonpDemo, _Component);
-
-	  function JsonpDemo() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, JsonpDemo);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = JsonpDemo.__proto__ || Object.getPrototypeOf(JsonpDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      jsonData: null
-	    }, _this.doJsonp = function () {
-	      (0, _index.jsonp)('//t.alicdn.com/t/gettime', {
-	        method: 'jsonp',
-	        timeout: 2000,
-	        callback: 'abc',
-	        body: 'a=123&b=456&c=789'
-	      }).then(function (response) {
-	        return response.json();
-	      }).then(function (json) {
-	        _this.setState({
-	          jsonData: JSON.stringify(json)
-	        });
-	      }).catch(function (ex) {
-	        _this.setState({
-	          jsonData: JSON.stringify(ex)
-	        });
-	      });
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(JsonpDemo, [{
-	    key: 'render',
-	    value: function render() {
-	      return (0, _rax.createElement)(
-	        _tileView2.default,
-	        { style: _style2.default.app },
-	        (0, _rax.createElement)(
-	          _tileText2.default,
-	          { style: demoStyles.text },
-	          'Jsonp \u8BF7\u6C42\u7ED3\u679C\uFF1A',
-	          this.state.jsonData
-	        ),
-	        (0, _rax.createElement)(
-	          _tileView2.default,
-	          { clickable: true, onPress: this.doJsonp, onClick: this.doJsonp, style: demoStyles.button },
-	          '\u53D1\u8D77 Jsonp \u8BF7\u6C42'
-	        )
-	      );
-	    }
-	  }]);
-
-	  return JsonpDemo;
-	}(_rax.Component);
-
-	var demoStyles = {
-	  text: {
-	    paddingLeft: 20,
-	    paddingRight: 20
-	  },
-	  button: {
-	    borderWidth: 2,
-	    borderColor: '#CCC',
-	    borderStyle: 'solid',
-	    paddingLeft: 20,
-	    paddingRight: 20,
-	    marginTop: 40,
-	    marginBottom: 40,
-	    backgroundColor: '#EEE'
-	  }
-	};
-
-	module.exports = JsonpDemo;
-
-/***/ }),
-/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4362,83 +4235,62 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var log = [];
+	var NetworkDemo = function (_Component) {
+	  _inherits(NetworkDemo, _Component);
 
-	var StorageDemo = function (_Component) {
-	  _inherits(StorageDemo, _Component);
-
-	  function StorageDemo() {
+	  function NetworkDemo() {
 	    var _ref;
 
 	    var _temp, _this, _ret;
 
-	    _classCallCheck(this, StorageDemo);
+	    _classCallCheck(this, NetworkDemo);
 
 	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = StorageDemo.__proto__ || Object.getPrototypeOf(StorageDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      val: null,
-	      log: []
-	    }, _this.setVal = function () {
-	      var val = Math.random();
-	      _index.storage.setItem('val', val, function () {
-	        log.push('val = ' + val);
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = NetworkDemo.__proto__ || Object.getPrototypeOf(NetworkDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      type: ''
+	    }, _this.fetch = function () {
+	      _index.network.getType(function (data) {
+	        console.log(data);
 	        _this.setState({
-	          log: log
+	          type: data.type
 	        });
-	      });
-	    }, _this.getVal = function () {
-	      _index.storage.getItem('val', function (val) {
-	        log.push('get val: ' + val.data);
+	      }, function (e) {
+	        console.log(e);
 	        _this.setState({
-	          log: log
+	          type: e.type
 	        });
 	      });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
-	  _createClass(StorageDemo, [{
+	  _createClass(NetworkDemo, [{
 	    key: 'render',
 	    value: function render() {
 	      return (0, _rax.createElement)(
 	        _tileView2.default,
 	        { style: _style2.default.app },
-	        this.state.log.map(function (val) {
-	          return (0, _rax.createElement)(
-	            _tileText2.default,
-	            null,
-	            val
-	          );
-	        }),
 	        (0, _rax.createElement)(
-	          _tileView2.default,
-	          { clickable: true, onPress: this.setVal, onClick: this.setVal, style: demoStyles.button },
-	          '\u4FDD\u5B58\u4E00\u4E2A\u968F\u673A\u6570'
+	          _tileText2.default,
+	          null,
+	          '\u7F51\u7EDC\u7C7B\u578B: ',
+	          this.state.type
 	        ),
 	        (0, _rax.createElement)(
 	          _tileView2.default,
-	          { clickable: true, onPress: this.getVal, onClick: this.getVal, style: demoStyles.button },
-	          '\u83B7\u53D6'
+	          { clickable: true, onPress: this.fetch, onClick: this.fetch, style: demoStyles.button },
+	          '\u83B7\u53D6\u7F51\u7EDC\u7C7B\u578B'
 	        )
 	      );
 	    }
 	  }]);
 
-	  return StorageDemo;
+	  return NetworkDemo;
 	}(_rax.Component);
 
 	var demoStyles = {
-	  input: {
-	    borderWidth: 2,
-	    borderColor: '#CCC',
-	    borderStyle: 'solid'
-	  },
-	  text: {
-	    paddingLeft: 20,
-	    paddingRight: 20
-	  },
 	  button: {
 	    borderWidth: 2,
 	    borderColor: '#CCC',
@@ -4450,11 +4302,11 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	  }
 	};
 
-	exports.default = StorageDemo;
+	exports.default = NetworkDemo;
 	module.exports = exports['default'];
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4625,7 +4477,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	module.exports = NavigatorDemo;
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4733,14 +4585,10 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	module.exports = exports['default'];
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -4768,40 +4616,193 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ENV = function (_Component) {
-	  _inherits(ENV, _Component);
+	;
 
-	  function ENV() {
-	    _classCallCheck(this, ENV);
+	var FetchDemo = function (_Component) {
+	  _inherits(FetchDemo, _Component);
 
-	    return _possibleConstructorReturn(this, (ENV.__proto__ || Object.getPrototypeOf(ENV)).apply(this, arguments));
+	  function FetchDemo() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, FetchDemo);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FetchDemo.__proto__ || Object.getPrototypeOf(FetchDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      fetchData: null,
+	      jsonData: null
+	    }, _this.doFetch = function () {
+	      (0, _index.fetch)('https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js').then(function (response) {
+	        return response.text();
+	      }).then(function (text) {
+	        _this.setState({
+	          fetchData: text.slice(1, 100) + '...'
+	        });
+	      }).catch(function (ex) {
+	        _this.setState({
+	          fetchData: JSON.stringify(ex)
+	        });
+	      });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
-	  _createClass(ENV, [{
+	  _createClass(FetchDemo, [{
 	    key: 'render',
 	    value: function render() {
 	      return (0, _rax.createElement)(
 	        _tileView2.default,
 	        { style: _style2.default.app },
 	        (0, _rax.createElement)(
+	          _tileText2.default,
+	          { style: demoStyles.text },
+	          'Fetch \u8BF7\u6C42\u7ED3\u679C\uFF1A',
+	          this.state.fetchData
+	        ),
+	        (0, _rax.createElement)(
 	          _tileView2.default,
-	          null,
-	          '\u5F53\u524D\u73AF\u5883\u662F\uFF1A ',
-	          (0, _rax.createElement)(
-	            _tileText2.default,
-	            { style: { color: '#F60', fontSize: 50 } },
-	            _index.isWeex ? 'Weex' : 'Web'
-	          )
+	          { clickable: true, onPress: this.doFetch, onClick: this.doFetch, style: demoStyles.button },
+	          '\u53D1\u8D77 Fetch \u8BF7\u6C42'
 	        )
 	      );
 	    }
 	  }]);
 
-	  return ENV;
+	  return FetchDemo;
 	}(_rax.Component);
 
-	exports.default = ENV;
-	module.exports = exports['default'];
+	var demoStyles = {
+	  text: {
+	    paddingLeft: 20,
+	    paddingRight: 20
+	  },
+	  button: {
+	    borderWidth: 2,
+	    borderColor: '#CCC',
+	    borderStyle: 'solid',
+	    paddingLeft: 20,
+	    paddingRight: 20,
+	    marginTop: 40,
+	    marginBottom: 40,
+	    backgroundColor: '#EEE'
+	  }
+	};
+
+	module.exports = FetchDemo;
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _rax = __webpack_require__(1);
+
+	var _tileView = __webpack_require__(2);
+
+	var _tileView2 = _interopRequireDefault(_tileView);
+
+	var _tileText = __webpack_require__(5);
+
+	var _tileText2 = _interopRequireDefault(_tileText);
+
+	var _style = __webpack_require__(29);
+
+	var _style2 = _interopRequireDefault(_style);
+
+	var _index = __webpack_require__(30);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var JsonpDemo = function (_Component) {
+	  _inherits(JsonpDemo, _Component);
+
+	  function JsonpDemo() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, JsonpDemo);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = JsonpDemo.__proto__ || Object.getPrototypeOf(JsonpDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      jsonData: null
+	    }, _this.doJsonp = function () {
+	      (0, _index.jsonp)('//t.alicdn.com/t/gettime', {
+	        method: 'jsonp',
+	        timeout: 2000,
+	        callback: 'abc',
+	        body: 'a=123&b=456&c=789'
+	      }).then(function (response) {
+	        return response.json();
+	      }).then(function (json) {
+	        _this.setState({
+	          jsonData: JSON.stringify(json)
+	        });
+	      }).catch(function (ex) {
+	        _this.setState({
+	          jsonData: JSON.stringify(ex)
+	        });
+	      });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(JsonpDemo, [{
+	    key: 'render',
+	    value: function render() {
+	      return (0, _rax.createElement)(
+	        _tileView2.default,
+	        { style: _style2.default.app },
+	        (0, _rax.createElement)(
+	          _tileText2.default,
+	          { style: demoStyles.text },
+	          'Jsonp \u8BF7\u6C42\u7ED3\u679C\uFF1A',
+	          this.state.jsonData
+	        ),
+	        (0, _rax.createElement)(
+	          _tileView2.default,
+	          { clickable: true, onPress: this.doJsonp, onClick: this.doJsonp, style: demoStyles.button },
+	          '\u53D1\u8D77 Jsonp \u8BF7\u6C42'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return JsonpDemo;
+	}(_rax.Component);
+
+	var demoStyles = {
+	  text: {
+	    paddingLeft: 20,
+	    paddingRight: 20
+	  },
+	  button: {
+	    borderWidth: 2,
+	    borderColor: '#CCC',
+	    borderStyle: 'solid',
+	    paddingLeft: 20,
+	    paddingRight: 20,
+	    marginTop: 40,
+	    marginBottom: 40,
+	    backgroundColor: '#EEE'
+	  }
+	};
+
+	module.exports = JsonpDemo;
 
 /***/ }),
 /* 66 */
@@ -4839,89 +4840,83 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var GeolocationDemo = function (_Component) {
-	  _inherits(GeolocationDemo, _Component);
+	var log = [];
 
-	  function GeolocationDemo() {
+	var StorageDemo = function (_Component) {
+	  _inherits(StorageDemo, _Component);
+
+	  function StorageDemo() {
 	    var _ref;
 
 	    var _temp, _this, _ret;
 
-	    _classCallCheck(this, GeolocationDemo);
+	    _classCallCheck(this, StorageDemo);
 
 	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = GeolocationDemo.__proto__ || Object.getPrototypeOf(GeolocationDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      isFetching: false,
-	      crd: {
-	        latitude: '',
-	        longitude: '',
-	        accuracy: ''
-	      }
-	    }, _this.fetch = function () {
-	      if (_this.state.isFetching) return;
-	      _this.setState({
-	        isFetching: true
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = StorageDemo.__proto__ || Object.getPrototypeOf(StorageDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      val: null,
+	      log: []
+	    }, _this.setVal = function () {
+	      var val = Math.random();
+	      _index.storage.setItem('val', val, function () {
+	        log.push('val = ' + val);
+	        _this.setState({
+	          log: log
+	        });
 	      });
-	      _index.geolocation.getCurrentPosition(function (data) {
-	        console.log(data);
+	    }, _this.getVal = function () {
+	      _index.storage.getItem('val', function (val) {
+	        log.push('get val: ' + val.data);
 	        _this.setState({
-	          isFetching: false,
-	          crd: data.coords
+	          log: log
 	        });
-	      }, function (err) {
-	        _this.setState({
-	          isFetching: false
-	        });
-	        console.log(err);
-	      }, {
-	        enableHighAccuracy: true,
-	        timeout: 3000,
-	        maximumAge: 0
 	      });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
-	  _createClass(GeolocationDemo, [{
+	  _createClass(StorageDemo, [{
 	    key: 'render',
 	    value: function render() {
 	      return (0, _rax.createElement)(
 	        _tileView2.default,
 	        { style: _style2.default.app },
+	        this.state.log.map(function (val) {
+	          return (0, _rax.createElement)(
+	            _tileText2.default,
+	            null,
+	            val
+	          );
+	        }),
 	        (0, _rax.createElement)(
-	          _tileText2.default,
-	          null,
-	          '\u7EAC\u5EA6: ',
-	          this.state.crd.latitude
-	        ),
-	        (0, _rax.createElement)(
-	          _tileText2.default,
-	          null,
-	          '\u7ECF\u5EA6: ',
-	          this.state.crd.longitude
-	        ),
-	        (0, _rax.createElement)(
-	          _tileText2.default,
-	          null,
-	          '\u7CBE\u5EA6: ',
-	          this.state.crd.accuracy
+	          _tileView2.default,
+	          { clickable: true, onPress: this.setVal, onClick: this.setVal, style: demoStyles.button },
+	          '\u4FDD\u5B58\u4E00\u4E2A\u968F\u673A\u6570'
 	        ),
 	        (0, _rax.createElement)(
 	          _tileView2.default,
-	          { clickable: true, onPress: this.fetch, onClick: this.fetch, style: demoStyles.button },
-	          '\u83B7\u53D6\u5730\u7406\u4F4D\u7F6E',
-	          this.state.isFetching ? "(获取中...)" : null
+	          { clickable: true, onPress: this.getVal, onClick: this.getVal, style: demoStyles.button },
+	          '\u83B7\u53D6'
 	        )
 	      );
 	    }
 	  }]);
 
-	  return GeolocationDemo;
+	  return StorageDemo;
 	}(_rax.Component);
 
 	var demoStyles = {
+	  input: {
+	    borderWidth: 2,
+	    borderColor: '#CCC',
+	    borderStyle: 'solid'
+	  },
+	  text: {
+	    paddingLeft: 20,
+	    paddingRight: 20
+	  },
 	  button: {
 	    borderWidth: 2,
 	    borderColor: '#CCC',
@@ -4933,7 +4928,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	  }
 	};
 
-	exports.default = GeolocationDemo;
+	exports.default = StorageDemo;
 	module.exports = exports['default'];
 
 /***/ }),
@@ -4972,38 +4967,39 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NetworkDemo = function (_Component) {
-	  _inherits(NetworkDemo, _Component);
+	var MtopDemo = function (_Component) {
+	  _inherits(MtopDemo, _Component);
 
-	  function NetworkDemo() {
+	  function MtopDemo() {
 	    var _ref;
 
 	    var _temp, _this, _ret;
 
-	    _classCallCheck(this, NetworkDemo);
+	    _classCallCheck(this, MtopDemo);
 
 	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = NetworkDemo.__proto__ || Object.getPrototypeOf(NetworkDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      type: ''
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MtopDemo.__proto__ || Object.getPrototypeOf(MtopDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      data: null
 	    }, _this.fetch = function () {
-	      _index.network.getType(function (data) {
-	        console.log(data);
+	      _index.mtop.request({
+	        api: 'mtop.user.getUserSimple',
+	        type: 'POST',
+	        secType: 2,
+	        date: {
+	          foo: 'bar'
+	        }
+	      }, function (json) {
 	        _this.setState({
-	          type: data.type
-	        });
-	      }, function (e) {
-	        console.log(e);
-	        _this.setState({
-	          type: e.type
+	          data: JSON.stringify(json)
 	        });
 	      });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
-	  _createClass(NetworkDemo, [{
+	  _createClass(MtopDemo, [{
 	    key: 'render',
 	    value: function render() {
 	      return (0, _rax.createElement)(
@@ -5011,23 +5007,27 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	        { style: _style2.default.app },
 	        (0, _rax.createElement)(
 	          _tileText2.default,
-	          null,
-	          '\u7F51\u7EDC\u7C7B\u578B: ',
-	          this.state.type
+	          { style: demoStyles.text },
+	          'Mtop \u8BF7\u6C42\u7ED3\u679C\uFF1A',
+	          this.state.data
 	        ),
 	        (0, _rax.createElement)(
 	          _tileView2.default,
 	          { clickable: true, onPress: this.fetch, onClick: this.fetch, style: demoStyles.button },
-	          '\u83B7\u53D6\u7F51\u7EDC\u7C7B\u578B'
+	          '\u53D1\u8D77 Mtop \u8BF7\u6C42'
 	        )
 	      );
 	    }
 	  }]);
 
-	  return NetworkDemo;
+	  return MtopDemo;
 	}(_rax.Component);
 
 	var demoStyles = {
+	  text: {
+	    paddingLeft: 20,
+	    paddingRight: 20
+	  },
 	  button: {
 	    borderWidth: 2,
 	    borderColor: '#CCC',
@@ -5039,7 +5039,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	  }
 	};
 
-	exports.default = NetworkDemo;
+	exports.default = MtopDemo;
 	module.exports = exports['default'];
 
 /***/ }),
