@@ -1,12 +1,7 @@
 import {createElement, render, Component} from 'rax';
-import View from 'tboc-view';
-import Image from 'tboc-image';
-import Input from 'tboc-input';
-import Text from 'tboc-text';
-import Icon from 'tboc-icon';
 import styles from './style.js';
 
-import Item from '../item/index';
+import Item from '../item/index.js';
 
 export default class ListBox extends Component {
 

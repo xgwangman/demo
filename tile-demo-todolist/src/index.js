@@ -1,11 +1,5 @@
 import {createElement, render, Component} from 'rax';
-import View from 'tboc-view';
-import Image from 'tboc-image';
-import Text from 'tboc-text';
-import ScrollView from 'tboc-scrollview';
 import styles from './style.js';
-
-import { storage } from 'tbom';
 
 import AddBox from './mods/add';
 import ListBox from './mods/list';
@@ -30,7 +24,7 @@ class App extends Component {
 
   save() {
     if (this.state.list && this.state.list.length > 0) {
-      storage.setItem('todolist', JSON.stringify(this.state.list), (ret) => {
+      Tida.storage.setItem('todolist', JSON.stringify(this.state.list), (ret) => {
         if (ret.result !== 'success') {
           console.log(ret);
         }
@@ -39,7 +33,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    storage.getItem('todolist', (ret) => {
+    Tida.storage.getItem('todolist', (ret) => {
       if (!ret.data) {
         this.save();
       } else {

@@ -1,8 +1,4 @@
 import {createElement, render, Component} from 'rax';
-import View from 'tboc-view';
-import Image from 'tboc-image';
-import Input from 'tboc-input';
-import Icon from 'tboc-icon';
 import styles from './style.js';
 
 export default class AddBox extends Component {

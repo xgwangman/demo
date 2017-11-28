@@ -88,67 +88,11 @@ var isWeb = exports.isWeb = (typeof navigator === 'undefined' ? 'undefined' : _t
 var isNode = exports.isNode = typeof process !== 'undefined' && !!(process.versions && process.versions.node);
 var isWeex = exports.isWeex = typeof callNative === 'function';
 var isReactNative = exports.isReactNative = typeof __fbBatchedBridgeConfig !== 'undefined';
+exports['default'] = module.exports;
+exports.default = module.exports;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _rax = __webpack_require__(0);
-
-var _raxView = __webpack_require__(3);
-
-var _raxView2 = _interopRequireDefault(_raxView);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TBOCView = function (_View) {
-  _inherits(TBOCView, _View);
-
-  function TBOCView() {
-    _classCallCheck(this, TBOCView);
-
-    return _possibleConstructorReturn(this, (TBOCView.__proto__ || Object.getPrototypeOf(TBOCView)).apply(this, arguments));
-  }
-
-  _createClass(TBOCView, [{
-    key: 'render',
-    value: function render() {
-      var props = this.props;
-      if (props.clickable) {
-        props.onClick = props.onPress;
-        props.style = Object.assign({
-          cursor: 'pointer'
-        }, props.style);
-        return (0, _rax.createElement)(_raxView2.default, props);
-      } else {
-        return (0, _rax.createElement)(_raxView2.default, props);
-      }
-    }
-  }]);
-
-  return TBOCView;
-}(_raxView2.default);
-
-exports.default = TBOCView;
-module.exports = exports['default'];
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -162,8 +106,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
@@ -174,7 +116,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var View = (_temp = _class = function (_Component) {
+var View = function (_Component) {
   _inherits(View, _Component);
 
   function View() {
@@ -198,7 +140,9 @@ var View = (_temp = _class = function (_Component) {
   }]);
 
   return View;
-}(_rax.Component), _class.propTypes = {}, _temp);
+}(_rax.Component);
+
+View.propTypes = {};
 
 
 var styles = {
@@ -214,6 +158,28 @@ var styles = {
 };
 
 exports.default = View;
+module.exports = exports['default'];
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _rax = __webpack_require__(0);
+
+var _raxView = __webpack_require__(2);
+
+var _raxView2 = _interopRequireDefault(_raxView);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _raxView2.default;
 module.exports = exports['default'];
 
 /***/ }),
@@ -255,8 +221,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp2;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
@@ -267,7 +231,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Text = (_temp2 = _class = function (_Component) {
+var Text = function (_Component) {
   _inherits(Text, _Component);
 
   function Text() {
@@ -390,11 +354,15 @@ var Text = (_temp2 = _class = function (_Component) {
   }]);
 
   return Text;
-}(_rax.Component), _class.propTypes = {}, _class.contextTypes = {
+}(_rax.Component);
+
+Text.propTypes = {};
+Text.contextTypes = {
   isInAParentText: _rax.PropTypes.bool
-}, _class.childContextTypes = {
+};
+Text.childContextTypes = {
   isInAParentText: _rax.PropTypes.bool
-}, _temp2);
+};
 
 
 function transformChild(child, instance) {
@@ -501,13 +469,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -519,7 +485,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Image = (_temp = _class = function (_Component) {
+var Image = function (_Component) {
   _inherits(Image, _Component);
 
   function Image() {
@@ -595,15 +561,19 @@ var Image = (_temp = _class = function (_Component) {
   }]);
 
   return Image;
-}(_rax.Component), _class.propTypes = {}, _class.resizeMode = {
+}(_rax.Component);
+
+Image.propTypes = {};
+Image.resizeMode = {
   contain: 'contain',
   cover: 'cover',
   stretch: 'stretch',
   center: 'center',
   repeat: 'repeat'
-}, _class.contextTypes = {
+};
+Image.contextTypes = {
   isInAParentText: _rax.PropTypes.bool
-}, _temp);
+};
 
 
 var styles = {
@@ -632,13 +602,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -650,7 +618,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Touchable = (_temp = _class = function (_Component) {
+var Touchable = function (_Component) {
   _inherits(Touchable, _Component);
 
   function Touchable() {
@@ -675,7 +643,9 @@ var Touchable = (_temp = _class = function (_Component) {
   }]);
 
   return Touchable;
-}(_rax.Component), _class.propTypes = {}, _temp);
+}(_rax.Component);
+
+Touchable.propTypes = {};
 
 
 var styles = {
@@ -788,9 +758,9 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 
 var AnimatedWithChildren=__webpack_require__(9);
 var InteractionManager=__webpack_require__(36);
-var AnimatedInterpolation=__webpack_require__(19);
-var Interpolation=__webpack_require__(13);
-var Animation=__webpack_require__(14);
+var AnimatedInterpolation=__webpack_require__(18);
+var Interpolation=__webpack_require__(14);
+var Animation=__webpack_require__(15);
 var guid=__webpack_require__(27);
 var Set;
 if(typeof global=='object'&&global.Set){
@@ -1023,6 +993,62 @@ module.exports = exports['default'];
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _rax = __webpack_require__(0);
+
+var _universalEnv = __webpack_require__(1);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RefreshControl = function (_Component) {
+  _inherits(RefreshControl, _Component);
+
+  function RefreshControl() {
+    _classCallCheck(this, RefreshControl);
+
+    return _possibleConstructorReturn(this, (RefreshControl.__proto__ || Object.getPrototypeOf(RefreshControl)).apply(this, arguments));
+  }
+
+  _createClass(RefreshControl, [{
+    key: 'render',
+    value: function render() {
+      if (_universalEnv.isWeex) {
+        var displayRefresh = this.props.refreshing ? 'show' : 'hide';
+        return (0, _rax.createElement)(
+          'refresh',
+          _extends({}, this.props, { display: displayRefresh }),
+          this.props.children
+        );
+      } else {
+        return null;
+      }
+    }
+  }]);
+
+  return RefreshControl;
+}(_rax.Component);
+
+exports.default = RefreshControl;
+module.exports = exports['default'];
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 
 
 
@@ -1036,7 +1062,7 @@ var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++)
 
 var normalizeColor=__webpack_require__(107);
 
-var invariant=__webpack_require__(20);
+var invariant=__webpack_require__(19);
 
 
 
@@ -1313,7 +1339,7 @@ name+'cannot be ]-infinity;+infinity[ '+arr);
 module.exports=Interpolation;
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1360,13 +1386,259 @@ onEnd&&onEnd(result);
 module.exports=Animation;
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("@weex-module/dom");
 
 /***/ }),
-/* 16 */
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _rax = __webpack_require__(0);
+
+var _raxButton = __webpack_require__(71);
+
+var _raxButton2 = _interopRequireDefault(_raxButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _raxButton2.default;
+module.exports = exports['default'];
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+
+
+
+
+
+
+
+
+var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
+
+var Animated=__webpack_require__(6);
+var AnimatedWithChildren=__webpack_require__(9);
+var invariant=__webpack_require__(19);
+var Interpolation=__webpack_require__(14);
+var guid=__webpack_require__(27);var
+
+
+
+AnimatedInterpolation=function(_AnimatedWithChildren){_inherits(AnimatedInterpolation,_AnimatedWithChildren);
+
+
+
+
+
+function AnimatedInterpolation(parent,interpolation){_classCallCheck(this,AnimatedInterpolation);var _this=_possibleConstructorReturn(this,(AnimatedInterpolation.__proto__||Object.getPrototypeOf(AnimatedInterpolation)).call(this));
+
+_this._parent=parent;
+_this._interpolation=interpolation;
+_this._listeners={};return _this;
+}_createClass(AnimatedInterpolation,[{key:'__getValue',value:function __getValue()
+
+{
+var parentValue=this._parent.__getValue();
+invariant(
+typeof parentValue==='number',
+'Cannot interpolate an input which is not a number.');
+
+return this._interpolation(parentValue);
+}},{key:'addListener',value:function addListener(
+
+callback){var _this2=this;
+if(!this._parentListener){
+this._parentListener=this._parent.addListener(function(){
+for(var key in _this2._listeners){
+_this2._listeners[key]({value:_this2.__getValue()});
+}
+});
+}
+var id=guid();
+this._listeners[id]=callback;
+return id;
+}},{key:'removeListener',value:function removeListener(
+
+id){
+delete this._listeners[id];
+}},{key:'interpolate',value:function interpolate(
+
+config){
+return new AnimatedInterpolation(this,Interpolation.create(config));
+}},{key:'__attach',value:function __attach()
+
+{
+this._parent.__addChild(this);
+}},{key:'__detach',value:function __detach()
+
+{
+this._parent.__removeChild(this);
+this._parentListener=this._parent.removeListener(this._parentListener);
+}}]);return AnimatedInterpolation;}(AnimatedWithChildren);
+
+
+module.exports=AnimatedInterpolation;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var NODE_ENV = "production";
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+
+
+
+
+
+
+
+
+
+var thisRequestAnimationFrame;
+if(typeof global=='object'){
+thisRequestAnimationFrame=global.requestAnimationFrame;
+}else if(typeof window=='object'){
+thisRequestAnimationFrame=window.requestAnimationFrame;
+}
+var RequestAnimationFrame={
+current:function current(cb){return thisRequestAnimationFrame(cb);},
+inject:function inject(injected){
+RequestAnimationFrame.current=injected;
+}};
+
+
+module.exports=RequestAnimationFrame;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+
+
+
+
+
+
+
+
+
+var thisCancelAnimationFrame;
+if(typeof global=='object'){
+thisCancelAnimationFrame=global.cancelAnimationFrame;
+}else if(typeof window=='object'){
+thisCancelAnimationFrame=window.cancelAnimationFrame;
+}
+var CancelAnimationFrame={
+current:function current(id){return thisCancelAnimationFrame(id);},
+inject:function inject(injected){
+CancelAnimationFrame.current=injected;
+}};
+
+
+module.exports=CancelAnimationFrame;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _rax = __webpack_require__(0);
+
+var _raxScrollview = __webpack_require__(54);
+
+var _raxScrollview2 = _interopRequireDefault(_raxScrollview);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _raxScrollview2.default;
+module.exports = exports['default'];
+
+/***/ }),
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1380,17 +1652,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
-var _raxRefreshcontrol = __webpack_require__(17);
+var _raxRefreshcontrol = __webpack_require__(13);
 
 var _raxRefreshcontrol2 = _interopRequireDefault(_raxRefreshcontrol);
 
@@ -1406,7 +1676,7 @@ var DEFAULT_END_REACHED_THRESHOLD = 500;
 var DEFAULT_SCROLL_CALLBACK_THROTTLE = 50;
 var FULL_WIDTH = 750;
 
-var ScrollView = (_temp = _class = function (_Component) {
+var ScrollView = function (_Component) {
   _inherits(ScrollView, _Component);
 
   function ScrollView(props) {
@@ -1484,7 +1754,7 @@ var ScrollView = (_temp = _class = function (_Component) {
       var y = parseInt(options.y);
 
       if (_universalEnv.isWeex) {
-        var dom = __webpack_require__(15);
+        var dom = __webpack_require__(16);
         var contentContainer = (0, _rax.findDOMNode)(_this.refs.contentContainer);
         dom.scrollToElement(contentContainer.ref, {
           offset: x || y || 0,
@@ -1622,13 +1892,16 @@ var ScrollView = (_temp = _class = function (_Component) {
   }]);
 
   return ScrollView;
-}(_rax.Component), _class.propTypes = {}, _class.defaultProps = {
+}(_rax.Component);
+
+ScrollView.propTypes = {};
+ScrollView.defaultProps = {
   scrollEventThrottle: DEFAULT_SCROLL_CALLBACK_THROTTLE,
   onEndReachedThreshold: DEFAULT_END_REACHED_THRESHOLD,
   showsHorizontalScrollIndicator: true,
   showsVerticalScrollIndicator: true,
   className: 'rax-scrollview'
-}, _temp);
+};
 
 
 function throttle(func, wait) {
@@ -1673,308 +1946,6 @@ exports.default = ScrollView;
 module.exports = exports['default'];
 
 /***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _rax = __webpack_require__(0);
-
-var _universalEnv = __webpack_require__(1);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var RefreshControl = function (_Component) {
-  _inherits(RefreshControl, _Component);
-
-  function RefreshControl() {
-    _classCallCheck(this, RefreshControl);
-
-    return _possibleConstructorReturn(this, (RefreshControl.__proto__ || Object.getPrototypeOf(RefreshControl)).apply(this, arguments));
-  }
-
-  _createClass(RefreshControl, [{
-    key: 'render',
-    value: function render() {
-      if (_universalEnv.isWeex) {
-        var displayRefresh = this.props.refreshing ? 'show' : 'hide';
-        return (0, _rax.createElement)(
-          'refresh',
-          _extends({}, this.props, { display: displayRefresh }),
-          this.props.children
-        );
-      } else {
-        return null;
-      }
-    }
-  }]);
-
-  return RefreshControl;
-}(_rax.Component);
-
-exports.default = RefreshControl;
-module.exports = exports['default'];
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _rax = __webpack_require__(0);
-
-var _raxButton = __webpack_require__(70);
-
-var _raxButton2 = _interopRequireDefault(_raxButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _raxButton2.default;
-module.exports = exports['default'];
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-
-
-
-
-
-
-
-
-var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
-
-var Animated=__webpack_require__(6);
-var AnimatedWithChildren=__webpack_require__(9);
-var invariant=__webpack_require__(20);
-var Interpolation=__webpack_require__(13);
-var guid=__webpack_require__(27);var
-
-
-
-AnimatedInterpolation=function(_AnimatedWithChildren){_inherits(AnimatedInterpolation,_AnimatedWithChildren);
-
-
-
-
-
-function AnimatedInterpolation(parent,interpolation){_classCallCheck(this,AnimatedInterpolation);var _this=_possibleConstructorReturn(this,(AnimatedInterpolation.__proto__||Object.getPrototypeOf(AnimatedInterpolation)).call(this));
-
-_this._parent=parent;
-_this._interpolation=interpolation;
-_this._listeners={};return _this;
-}_createClass(AnimatedInterpolation,[{key:'__getValue',value:function __getValue()
-
-{
-var parentValue=this._parent.__getValue();
-invariant(
-typeof parentValue==='number',
-'Cannot interpolate an input which is not a number.');
-
-return this._interpolation(parentValue);
-}},{key:'addListener',value:function addListener(
-
-callback){var _this2=this;
-if(!this._parentListener){
-this._parentListener=this._parent.addListener(function(){
-for(var key in _this2._listeners){
-_this2._listeners[key]({value:_this2.__getValue()});
-}
-});
-}
-var id=guid();
-this._listeners[id]=callback;
-return id;
-}},{key:'removeListener',value:function removeListener(
-
-id){
-delete this._listeners[id];
-}},{key:'interpolate',value:function interpolate(
-
-config){
-return new AnimatedInterpolation(this,Interpolation.create(config));
-}},{key:'__attach',value:function __attach()
-
-{
-this._parent.__addChild(this);
-}},{key:'__detach',value:function __detach()
-
-{
-this._parent.__removeChild(this);
-this._parentListener=this._parent.removeListener(this._parentListener);
-}}]);return AnimatedInterpolation;}(AnimatedWithChildren);
-
-
-module.exports=AnimatedInterpolation;
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright 2013-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var NODE_ENV = "production";
-
-var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (NODE_ENV !== 'production') {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  }
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
-      error.name = 'Invariant Violation';
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-};
-
-module.exports = invariant;
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-
-
-
-
-
-
-
-
-
-var thisRequestAnimationFrame;
-if(typeof global=='object'){
-thisRequestAnimationFrame=global.requestAnimationFrame;
-}else if(typeof window=='object'){
-thisRequestAnimationFrame=window.requestAnimationFrame;
-}
-var RequestAnimationFrame={
-current:function current(cb){return thisRequestAnimationFrame(cb);},
-inject:function inject(injected){
-RequestAnimationFrame.current=injected;
-}};
-
-
-module.exports=RequestAnimationFrame;
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-
-
-
-
-
-
-
-
-
-var thisCancelAnimationFrame;
-if(typeof global=='object'){
-thisCancelAnimationFrame=global.cancelAnimationFrame;
-}else if(typeof window=='object'){
-thisCancelAnimationFrame=window.cancelAnimationFrame;
-}
-var CancelAnimationFrame={
-current:function current(id){return thisCancelAnimationFrame(id);},
-inject:function inject(injected){
-CancelAnimationFrame.current=injected;
-}};
-
-
-module.exports=CancelAnimationFrame;
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _rax = __webpack_require__(0);
-
-var _raxScrollview = __webpack_require__(16);
-
-var _raxScrollview2 = _interopRequireDefault(_raxScrollview);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _raxScrollview2.default;
-module.exports = exports['default'];
-
-/***/ }),
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1983,11 +1954,11 @@ module.exports = exports['default'];
 
 var _universalEnv = __webpack_require__(1);
 
-var _TouchHistoryMath = __webpack_require__(65);
+var _TouchHistoryMath = __webpack_require__(66);
 
 var _TouchHistoryMath2 = _interopRequireDefault(_TouchHistoryMath);
 
-var _ResponderTouchHistoryStore = __webpack_require__(66);
+var _ResponderTouchHistoryStore = __webpack_require__(67);
 
 var _ResponderTouchHistoryStore2 = _interopRequireDefault(_ResponderTouchHistoryStore);
 
@@ -2424,25 +2395,29 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _rax = __webpack_require__(0);
 
-var _raxCheckbox = __webpack_require__(72);
+var _raxCheckbox = __webpack_require__(73);
 
 var _raxCheckbox2 = _interopRequireDefault(_raxCheckbox);
 
-var _raxCounter = __webpack_require__(73);
+var _raxCounter = __webpack_require__(74);
 
 var _raxCounter2 = _interopRequireDefault(_raxCounter);
 
-var _raxSwitch = __webpack_require__(74);
+var _raxSwitch = __webpack_require__(75);
 
 var _raxSwitch2 = _interopRequireDefault(_raxSwitch);
 
-var _raxTextinput = __webpack_require__(75);
+var _raxTextinput = __webpack_require__(76);
 
 var _raxTextinput2 = _interopRequireDefault(_raxTextinput);
+
+var _universalEnv = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2466,6 +2441,14 @@ var Input = function () {
         case 'switch':
           return (0, _rax.createElement)(_raxSwitch2.default, props);
         case 'text':
+          delete props.multiline;
+          return (0, _rax.createElement)(_raxTextinput2.default, props);
+        case 'textarea':
+          if (_universalEnv.isWeb) {
+            // web 下 textarea 设置 type 属性会报错
+            delete props.type;
+          }
+          return (0, _rax.createElement)(_raxTextinput2.default, _extends({ multiline: true }, props));
         default:
           return (0, _rax.createElement)(_raxTextinput2.default, props);
       }
@@ -2545,15 +2528,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 exports.createIconSet = createIconSet;
 
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -2573,7 +2554,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Icon = (_temp = _class = function (_Component) {
+var Icon = function (_Component) {
   _inherits(Icon, _Component);
 
   function Icon() {
@@ -2609,7 +2590,7 @@ var Icon = (_temp = _class = function (_Component) {
       }
 
       if (_universalEnv.isWeex) {
-        var domModule = __webpack_require__(15);
+        var domModule = __webpack_require__(16);
         domModule.addRule('fontFace', {
           'fontFamily': fontFamily,
           'src': "url('" + uri + "')" // single quotes are required around uri, and double quotes can not work
@@ -2624,10 +2605,12 @@ var Icon = (_temp = _class = function (_Component) {
   }]);
 
   return Icon;
-}(_rax.Component), _class.propTypes = {
+}(_rax.Component);
+
+Icon.propTypes = {
   fontFamily: _rax.PropTypes.string,
   source: _rax.PropTypes.object
-}, _temp);
+};
 exports.default = Icon;
 function createIconSet(glyphMap, fontFamily, uri) {
   var IconFont = function (_Component2) {
@@ -2701,21 +2684,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp, _class2, _temp2, _class3, _temp3;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
-var _raxScrollview = __webpack_require__(16);
+var _raxScrollview = __webpack_require__(23);
 
 var _raxScrollview2 = _interopRequireDefault(_raxScrollview);
 
-var _raxRefreshcontrol = __webpack_require__(17);
+var _raxRefreshcontrol = __webpack_require__(13);
 
 var _raxRefreshcontrol2 = _interopRequireDefault(_raxRefreshcontrol);
 
@@ -2729,7 +2710,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var DEFAULT_END_REACHED_THRESHOLD = 500;
 
-var Cell = (_temp = _class = function (_PureComponent) {
+var Cell = function (_PureComponent) {
   _inherits(Cell, _PureComponent);
 
   function Cell() {
@@ -2750,10 +2731,13 @@ var Cell = (_temp = _class = function (_PureComponent) {
   }]);
 
   return Cell;
-}(_rax.PureComponent), _class.contextTypes = {
+}(_rax.PureComponent);
+
+Cell.contextTypes = {
   isInARecyclerView: _rax.PropTypes.bool
-}, _temp);
-var Header = (_temp2 = _class2 = function (_PureComponent2) {
+};
+
+var Header = function (_PureComponent2) {
   _inherits(Header, _PureComponent2);
 
   function Header() {
@@ -2774,10 +2758,13 @@ var Header = (_temp2 = _class2 = function (_PureComponent2) {
   }]);
 
   return Header;
-}(_rax.PureComponent), _class2.contextTypes = {
+}(_rax.PureComponent);
+
+Header.contextTypes = {
   isInARecyclerView: _rax.PropTypes.bool
-}, _temp2);
-var RecyclerView = (_temp3 = _class3 = function (_Component) {
+};
+
+var RecyclerView = function (_Component) {
   _inherits(RecyclerView, _Component);
 
   function RecyclerView(props) {
@@ -2814,7 +2801,7 @@ var RecyclerView = (_temp3 = _class3 = function (_Component) {
       var y = parseInt(options.y);
 
       if (_universalEnv.isWeex) {
-        var dom = __webpack_require__(15);
+        var dom = __webpack_require__(16);
         var firstNode = (0, _rax.findDOMNode)(_this3.refs.firstNodePlaceholder);
         dom.scrollToElement(firstNode.ref, {
           offset: x || y || 0,
@@ -2850,7 +2837,8 @@ var RecyclerView = (_temp3 = _class3 = function (_Component) {
 
         var cells = children.map(function (child, index) {
           if (child) {
-            if (props._autoWrapCell && child.type != _raxRefreshcontrol2.default && child.type != Header) {
+            var hasOnRefresh = child.props && typeof child.props.onRefresh == 'function';
+            if (props._autoWrapCell && child.type != _raxRefreshcontrol2.default && child.type != Header && !hasOnRefresh) {
               return (0, _rax.createElement)(
                 Cell,
                 null,
@@ -2886,11 +2874,14 @@ var RecyclerView = (_temp3 = _class3 = function (_Component) {
   }]);
 
   return RecyclerView;
-}(_rax.Component), _class3.defaultProps = {
+}(_rax.Component);
+
+RecyclerView.defaultProps = {
   onEndReachedThreshold: DEFAULT_END_REACHED_THRESHOLD
-}, _class3.childContextTypes = {
+};
+RecyclerView.childContextTypes = {
   isInARecyclerView: _rax.PropTypes.bool
-}, _temp3);
+};
 
 
 RecyclerView.Header = Header;
@@ -2912,7 +2903,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _rax = __webpack_require__(0);
 
-var _raxPlayer = __webpack_require__(60);
+var _raxPlayer = __webpack_require__(61);
 
 var _raxPlayer2 = _interopRequireDefault(_raxPlayer);
 
@@ -3055,7 +3046,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -3067,7 +3058,7 @@ var _raxText = __webpack_require__(5);
 
 var _raxText2 = _interopRequireDefault(_raxText);
 
-var _raxScrollview = __webpack_require__(16);
+var _raxScrollview = __webpack_require__(23);
 
 var _raxScrollview2 = _interopRequireDefault(_raxScrollview);
 
@@ -3370,6 +3361,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.Row = _Row3.default;
 exports.Col = _Col3.default;
+exports['default'] = module.exports;
+exports.default = module.exports;
 
 /***/ }),
 /* 41 */
@@ -3382,7 +3375,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -3402,7 +3395,7 @@ var _tileIcon = __webpack_require__(28);
 
 var _tileIcon2 = _interopRequireDefault(_tileIcon);
 
-var _tileScrollview = __webpack_require__(23);
+var _tileScrollview = __webpack_require__(22);
 
 var _tileScrollview2 = _interopRequireDefault(_tileScrollview);
 
@@ -3416,21 +3409,20 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Demos = {
   // style: require('./StyleDemo'),
-  view: __webpack_require__(54),
-  scrollview: __webpack_require__(55),
-  refreshcontrol: __webpack_require__(56),
-  image: __webpack_require__(58),
-  video: __webpack_require__(59),
-  input: __webpack_require__(71),
-  picker: __webpack_require__(76),
-  text: __webpack_require__(81),
-  button: __webpack_require__(82),
-  switch: __webpack_require__(83),
-  listview: __webpack_require__(84),
-  recyclerview: __webpack_require__(87),
-  waterfall: __webpack_require__(88),
-  link: __webpack_require__(91),
-  touchable: __webpack_require__(92),
+  view: __webpack_require__(55),
+  scrollview: __webpack_require__(56),
+  refreshcontrol: __webpack_require__(57),
+  image: __webpack_require__(59),
+  video: __webpack_require__(60),
+  input: __webpack_require__(72),
+  picker: __webpack_require__(77),
+  text: __webpack_require__(82),
+  button: __webpack_require__(83),
+  switch: __webpack_require__(84),
+  listview: __webpack_require__(85),
+  recyclerview: __webpack_require__(88),
+  waterfall: __webpack_require__(89),
+  link: __webpack_require__(92),
   calendar: __webpack_require__(93),
   countdown: __webpack_require__(99),
   gotop: __webpack_require__(102),
@@ -3479,7 +3471,7 @@ var Index = function (_Component) {
         { style: [styles.indexWrapper, styles.wholeWrapper] },
         (0, _rax.createElement)(
           _tileScrollview2.default,
-          null,
+          { ref: 'scrollview' },
           (0, _rax.createElement)(
             _tileView2.default,
             { style: styles.header },
@@ -3510,7 +3502,7 @@ var Index = function (_Component) {
                   coms[key].map(function (demo) {
                     return (0, _rax.createElement)(
                       _tileView2.default,
-                      { style: styles.item, clickable: true, onPress: function onPress() {
+                      { style: styles.item, onClick: function onClick() {
                           return _this2.changeDemoName(demo);
                         } },
                       (0, _rax.createElement)(_tileIcon2.default, {
@@ -3554,6 +3546,11 @@ var Index = function (_Component) {
 
       var name = this.state.demoName;
       var DemoName = Demos[name];
+      var props = name === 'gotop' ? {
+        onTop: function onTop() {
+          _this3.scrollview.scrollTo({ y: 0 });
+        }
+      } : {};
       return (0, _rax.createElement)(
         _tileView2.default,
         { style: [styles.itemWrapper, styles.wholeWrapper] },
@@ -3562,7 +3559,7 @@ var Index = function (_Component) {
           { style: styles.titleWrapper },
           (0, _rax.createElement)(
             _tileView2.default,
-            { style: styles.itemIconLink, clickable: true, onPress: function onPress() {
+            { style: styles.itemIconLink, onClick: function onClick() {
                 return _this3.changeDemoName(null);
               } },
             this.state.isSingle ? null : (0, _rax.createElement)(_tileIcon2.default, {
@@ -3584,7 +3581,7 @@ var Index = function (_Component) {
           { ref: function ref(scrollview) {
               _this3.scrollview = scrollview;
             } },
-          (0, _rax.createElement)(DemoName, null),
+          (0, _rax.createElement)(DemoName, props),
           (0, _rax.createElement)(
             _tileView2.default,
             { style: styles.footer },
@@ -3593,7 +3590,7 @@ var Index = function (_Component) {
               { style: styles.footerText, onclick: function onclick() {
                   return _this3.changeDemoName(null);
                 } },
-              '\xA9 Tile \u793A\u4F8B'
+              '\xA9 Tile Components \u793A\u4F8B'
             )
           )
         )
@@ -3810,8 +3807,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
@@ -3828,7 +3823,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Link = (_temp = _class = function (_Component) {
+var Link = function (_Component) {
   _inherits(Link, _Component);
 
   function Link() {
@@ -3899,12 +3894,15 @@ var Link = (_temp = _class = function (_Component) {
   }]);
 
   return Link;
-}(_rax.Component), _class.contextTypes = {
+}(_rax.Component);
+
+Link.contextTypes = {
   isInAParentLink: _rax.PropTypes.bool,
   isInAParentText: _rax.PropTypes.bool
-}, _class.childContextTypes = {
+};
+Link.childContextTypes = {
   isInAParentLink: _rax.PropTypes.bool
-}, _temp);
+};
 
 
 var styles = {
@@ -3954,11 +3952,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp2;
-
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -4033,7 +4029,7 @@ function getQualitySuffix(highQuality, suffix) {
   return highQuality ? _suffix[0] : _suffix[1];
 }
 
-var Picture = (_temp2 = _class = function (_Component) {
+var Picture = function (_Component) {
   _inherits(Picture, _Component);
 
   function Picture() {
@@ -4186,7 +4182,9 @@ var Picture = (_temp2 = _class = function (_Component) {
   }]);
 
   return Picture;
-}(_rax.Component), _class.defaultProps = {
+}(_rax.Component);
+
+Picture.defaultProps = {
   placeholder: 'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==',
   source: {
     uri: ''
@@ -4203,7 +4201,8 @@ var Picture = (_temp2 = _class = function (_Component) {
 
   lazyload: false,
   autoPixelRatio: true
-}, _class.propTypes = {
+};
+Picture.propTypes = {
   style: _rax.PropTypes.object,
   source: _rax.PropTypes.object.isRequired,
   resizeMode: _rax.PropTypes.oneOf(['contain', 'cover', 'stretch']),
@@ -4225,7 +4224,7 @@ var Picture = (_temp2 = _class = function (_Component) {
   autoPixelRatio: _rax.PropTypes.bool,
   forceUpdate: _rax.PropTypes.bool,
   ignoreGif: _rax.PropTypes.bool
-}, _temp2);
+};
 exports.default = Picture;
 module.exports = exports['default'];
 
@@ -4639,8 +4638,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 var _rax = __webpack_require__(0);
 
 var _raxImage = __webpack_require__(7);
@@ -4655,7 +4652,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Picture = (_temp = _class = function (_Component) {
+var Picture = function (_Component) {
   _inherits(Picture, _Component);
 
   function Picture() {
@@ -4722,12 +4719,15 @@ var Picture = (_temp = _class = function (_Component) {
   }]);
 
   return Picture;
-}(_rax.Component), _class.defaultProps = {
+}(_rax.Component);
+
+Picture.defaultProps = {
   source: {
     uri: ''
   },
   defaultHeight: 750
-}, _class.propTypes = {
+};
+Picture.propTypes = {
   style: _rax.PropTypes.object,
   source: _rax.PropTypes.object.isRequired,
   resizeMode: _rax.PropTypes.oneOf(['contain', 'cover', 'stretch']),
@@ -4737,7 +4737,7 @@ var Picture = (_temp = _class = function (_Component) {
   defaultHeight: _rax.PropTypes.string, // default height when the height setting fails
 
   forceUpdate: _rax.PropTypes.bool
-}, _temp);
+};
 exports.default = Picture;
 module.exports = exports['default'];
 
@@ -4752,11 +4752,325 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _universalEnv = __webpack_require__(1);
+
+var _raxView = __webpack_require__(2);
+
+var _raxView2 = _interopRequireDefault(_raxView);
+
+var _raxRefreshcontrol = __webpack_require__(13);
+
+var _raxRefreshcontrol2 = _interopRequireDefault(_raxRefreshcontrol);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DEFAULT_END_REACHED_THRESHOLD = 500;
+var DEFAULT_SCROLL_CALLBACK_THROTTLE = 50;
+var FULL_WIDTH = 750;
+
+var ScrollView = function (_Component) {
+  _inherits(ScrollView, _Component);
+
+  function ScrollView(props) {
+    _classCallCheck(this, ScrollView);
+
+    var _this = _possibleConstructorReturn(this, (ScrollView.__proto__ || Object.getPrototypeOf(ScrollView)).call(this, props));
+
+    _this.lastScrollDistance = 0;
+    _this.lastScrollContentSize = 0;
+    _this.loadmoreretry = 1;
+
+    _this.handleScroll = function (e) {
+      if (_universalEnv.isWeb) {
+        if (_this.props.onScroll) {
+          e.nativeEvent = {
+            get contentOffset() {
+              return {
+                x: e.target.scrollLeft,
+                y: e.target.scrollTop
+              };
+            }
+          };
+          _this.props.onScroll(e);
+        }
+
+        if (_this.props.onEndReached) {
+          if (!_this.scrollerNode) {
+            _this.scrollerNode = (0, _rax.findDOMNode)(_this.refs.scroller);
+            _this.scrollerContentNode = (0, _rax.findDOMNode)(_this.refs.contentContainer);
+
+            _this.scrollerNodeSize = _this.props.horizontal ? _this.scrollerNode.offsetWidth : _this.scrollerNode.offsetHeight;
+          }
+
+          // NOTE：in iOS7/8 offsetHeight/Width is is inaccurate （ use scrollHeight/Width ）
+          var scrollContentSize = _this.props.horizontal ? _this.scrollerNode.scrollWidth : _this.scrollerNode.scrollHeight;
+          var scrollDistance = _this.props.horizontal ? _this.scrollerNode.scrollLeft : _this.scrollerNode.scrollTop;
+          var isEndReached = scrollContentSize - scrollDistance - _this.scrollerNodeSize < _this.props.onEndReachedThreshold;
+
+          var isScrollToEnd = scrollDistance > _this.lastScrollDistance;
+          var isLoadedMoreContent = scrollContentSize != _this.lastScrollContentSize;
+
+          if (isEndReached && isScrollToEnd && isLoadedMoreContent) {
+            _this.lastScrollContentSize = scrollContentSize;
+            _this.props.onEndReached(e);
+          }
+
+          _this.lastScrollDistance = scrollDistance;
+        }
+      }
+      if (_universalEnv.isWeex) {
+        e.nativeEvent = {
+          contentOffset: {
+            // HACK: weex scroll event value is opposite of web
+            x: -e.contentOffset.x,
+            y: -e.contentOffset.y
+          }
+        };
+        _this.props.onScroll(e);
+      }
+    };
+
+    _this.resetScroll = function () {
+      if (_universalEnv.isWeb) {
+        _this.lastScrollContentSize = 0;
+        _this.lastScrollDistance = 0;
+      } else {
+        _this.setState({
+          loadmoreretry: _this.loadmoreretry++
+        });
+      }
+    };
+
+    _this.scrollTo = function (options) {
+      var x = parseInt(options.x);
+      var y = parseInt(options.y);
+
+      if (_universalEnv.isWeex) {
+        var dom = __weex_require__('@weex-module/dom');
+        var contentContainer = (0, _rax.findDOMNode)(_this.refs.contentContainer);
+        dom.scrollToElement(contentContainer.ref, {
+          offset: x || y || 0,
+          animated: options && typeof options.animated !== 'undefined' ? options.animated : true
+        });
+      } else {
+        var pixelRatio = document.documentElement.clientWidth / FULL_WIDTH;
+
+        if (x >= 0) {
+          (0, _rax.findDOMNode)(_this.refs.scroller).scrollLeft = pixelRatio * x;
+        }
+
+        if (y >= 0) {
+          (0, _rax.findDOMNode)(_this.refs.scroller).scrollTop = pixelRatio * y;
+        }
+      }
+    };
+
+    _this.state = {
+      loadmoreretry: 0
+    };
+    return _this;
+  }
+
+  _createClass(ScrollView, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          id = _props.id,
+          style = _props.style,
+          scrollEventThrottle = _props.scrollEventThrottle,
+          showsHorizontalScrollIndicator = _props.showsHorizontalScrollIndicator,
+          showsVerticalScrollIndicator = _props.showsVerticalScrollIndicator,
+          onEndReached = _props.onEndReached,
+          onEndReachedThreshold = _props.onEndReachedThreshold,
+          onScroll = _props.onScroll,
+          children = _props.children;
+
+      // In weex must be int value
+
+      onEndReachedThreshold = parseInt(onEndReachedThreshold, 10);
+
+      var contentContainerStyle = [this.props.horizontal && styles.contentContainerHorizontal, this.props.contentContainerStyle];
+
+      // bugfix: fix scrollview flex in ios 78
+      if (!_universalEnv.isWeex && !this.props.horizontal) {
+        contentContainerStyle.push(styles.containerWebStyle);
+      }
+
+      if (this.props.style) {
+        var childLayoutProps = ['alignItems', 'justifyContent'].filter(function (prop) {
+          return _this2.props.style[prop] !== undefined;
+        });
+
+        if (childLayoutProps.length !== 0) {
+          console.warn('ScrollView child layout (' + JSON.stringify(childLayoutProps) + ') must be applied through the contentContainerStyle prop.');
+        }
+      }
+
+      var refreshContainer = (0, _rax.createElement)(_raxView2.default, null),
+          contentChild = void 0;
+      if (Array.isArray(children)) {
+        contentChild = children.map(function (child, index) {
+          if (child && child.type == _raxRefreshcontrol2.default) {
+            refreshContainer = child;
+          } else {
+            return child;
+          }
+        });
+      } else {
+        contentChild = children;
+      }
+
+      var contentContainer = (0, _rax.createElement)(
+        _raxView2.default,
+        {
+          ref: 'contentContainer',
+          style: contentContainerStyle },
+        contentChild
+      );
+
+      var baseStyle = this.props.horizontal ? styles.baseHorizontal : styles.baseVertical;
+
+      var scrollerStyle = _extends({}, baseStyle, this.props.style);
+
+      var showsScrollIndicator = this.props.horizontal ? showsHorizontalScrollIndicator : showsVerticalScrollIndicator;
+
+      if (_universalEnv.isWeex) {
+        return (0, _rax.createElement)(
+          'scroller',
+          _extends({}, this.props, {
+            style: scrollerStyle,
+            showScrollbar: showsScrollIndicator,
+            onLoadmore: onEndReached,
+            onScroll: onScroll ? this.handleScroll : null,
+            loadmoreoffset: onEndReachedThreshold,
+            loadmoreretry: this.state.loadmoreretry,
+            scrollDirection: this.props.horizontal ? 'horizontal' : 'vertical'
+          }),
+          refreshContainer,
+          contentContainer
+        );
+      } else {
+        var handleScroll = this.handleScroll;
+        if (scrollEventThrottle) {
+          handleScroll = throttle(handleScroll, scrollEventThrottle);
+        }
+
+        var _document;
+        try {
+          _document = eval('document');
+        } catch (err) {
+          _document = null;
+        }
+        if (_document && !showsScrollIndicator && !_document.getElementById('rax-scrollview-style')) {
+          var styleNode = _document.createElement('style');
+          styleNode.id = 'rax-scrollview-style';
+          _document.head.appendChild(styleNode);
+          styleNode.innerHTML = '.' + this.props.className + '::-webkit-scrollbar{display: none;}';
+        }
+
+        scrollerStyle.webkitOverflowScrolling = 'touch';
+        scrollerStyle.overflow = 'scroll';
+
+        var webProps = _extends({}, this.props, {
+          ref: 'scroller',
+          style: scrollerStyle,
+          onScroll: handleScroll
+        });
+        delete webProps.onEndReachedThreshold;
+
+        return (0, _rax.createElement)(
+          _raxView2.default,
+          webProps,
+          contentContainer
+        );
+      }
+    }
+  }]);
+
+  return ScrollView;
+}(_rax.Component);
+
+ScrollView.propTypes = {};
+ScrollView.defaultProps = {
+  scrollEventThrottle: DEFAULT_SCROLL_CALLBACK_THROTTLE,
+  onEndReachedThreshold: DEFAULT_END_REACHED_THRESHOLD,
+  showsHorizontalScrollIndicator: true,
+  showsVerticalScrollIndicator: true,
+  className: 'rax-scrollview'
+};
+
+
+function throttle(func, wait) {
+  var ctx, args, rtn, timeoutID;
+  var last = 0;
+
+  function call() {
+    timeoutID = 0;
+    last = +new Date();
+    rtn = func.apply(ctx, args);
+    ctx = null;
+    args = null;
+  }
+
+  return function throttled() {
+    ctx = this;
+    args = arguments;
+    var delta = new Date() - last;
+    if (!timeoutID) if (delta >= wait) call();else timeoutID = setTimeout(call, wait - delta);
+    return rtn;
+  };
+}
+
+var styles = {
+  baseVertical: {
+    flex: 1,
+    flexDirection: 'column'
+  },
+  baseHorizontal: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  contentContainerHorizontal: {
+    flexDirection: 'row'
+  },
+  containerWebStyle: {
+    display: 'block'
+  }
+};
+
+exports.default = ScrollView;
+module.exports = exports['default'];
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _rax = __webpack_require__(0);
+
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -4893,7 +5207,7 @@ var ViewDemo = function (_Component) {
           { style: styles.container },
           (0, _rax.createElement)(
             _tileView2.default,
-            { clickable: true, onPress: this._handlePress },
+            { onClick: this._handlePress },
             (0, _rax.createElement)(
               _tileView2.default,
               null,
@@ -5089,7 +5403,7 @@ exports.default = ViewDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5103,7 +5417,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -5115,7 +5429,7 @@ var _tileRecyclerview = __webpack_require__(30);
 
 var _tileRecyclerview2 = _interopRequireDefault(_tileRecyclerview);
 
-var _tileScrollview = __webpack_require__(23);
+var _tileScrollview = __webpack_require__(22);
 
 var _tileScrollview2 = _interopRequireDefault(_tileScrollview);
 
@@ -5343,7 +5657,7 @@ exports.default = ScrollViewDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5357,7 +5671,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -5365,11 +5679,11 @@ var _tileText = __webpack_require__(4);
 
 var _tileText2 = _interopRequireDefault(_tileText);
 
-var _tileScrollview = __webpack_require__(23);
+var _tileScrollview = __webpack_require__(22);
 
 var _tileScrollview2 = _interopRequireDefault(_tileScrollview);
 
-var _tileRefreshcontrol = __webpack_require__(57);
+var _tileRefreshcontrol = __webpack_require__(58);
 
 var _tileRefreshcontrol2 = _interopRequireDefault(_tileRefreshcontrol);
 
@@ -5618,7 +5932,7 @@ var Row = function (_Component2) {
     value: function render() {
       return (0, _rax.createElement)(
         _tileView2.default,
-        { clickable: true, onPress: this.handleClick },
+        { onClick: this.handleClick },
         (0, _rax.createElement)(
           _tileView2.default,
           { style: styles.row },
@@ -5639,7 +5953,7 @@ exports.default = RefreshControlDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5651,7 +5965,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _rax = __webpack_require__(0);
 
-var _raxRefreshcontrol = __webpack_require__(17);
+var _raxRefreshcontrol = __webpack_require__(13);
 
 var _raxRefreshcontrol2 = _interopRequireDefault(_raxRefreshcontrol);
 
@@ -5661,7 +5975,7 @@ exports.default = _raxRefreshcontrol2.default;
 module.exports = exports['default'];
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5675,7 +5989,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -5926,7 +6240,7 @@ exports.default = ImageDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5940,7 +6254,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -5952,7 +6266,7 @@ var _tileVideo = __webpack_require__(32);
 
 var _tileVideo2 = _interopRequireDefault(_tileVideo);
 
-var _tileButton = __webpack_require__(18);
+var _tileButton = __webpack_require__(17);
 
 var _tileButton2 = _interopRequireDefault(_tileButton);
 
@@ -6037,6 +6351,7 @@ var VideoDemo = function (_Component) {
               height: 350,
               backgroundColor: '#FFF'
             },
+            currentTime: 20,
             autoPlay: false,
             muted: true,
             src: 'http://cloud.video.taobao.com/play/u/2780279213/p/1/e/6/t/1/d/ld/36255062.mp4'
@@ -6066,7 +6381,7 @@ exports.default = VideoDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6080,16 +6395,16 @@ var _universalEnv = __webpack_require__(1);
 
 var Video = void 0;
 if (_universalEnv.isWeb) {
-  Video = __webpack_require__(61);
+  Video = __webpack_require__(62);
 } else {
-  Video = __webpack_require__(69);
+  Video = __webpack_require__(70);
 }
 
 exports.default = Video;
 module.exports = exports['default'];
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6105,7 +6420,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -6117,11 +6432,11 @@ var _raxImage = __webpack_require__(7);
 
 var _raxImage2 = _interopRequireDefault(_raxImage);
 
-var _controller = __webpack_require__(62);
+var _controller = __webpack_require__(63);
 
 var _controller2 = _interopRequireDefault(_controller);
 
-var _env = __webpack_require__(68);
+var _env = __webpack_require__(69);
 
 var _env2 = _interopRequireDefault(_env);
 
@@ -6540,7 +6855,7 @@ exports.default = Video;
 module.exports = exports['default'];
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6556,7 +6871,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -6576,7 +6891,7 @@ var _raxIcon = __webpack_require__(29);
 
 var _raxIcon2 = _interopRequireDefault(_raxIcon);
 
-var _progress = __webpack_require__(63);
+var _progress = __webpack_require__(64);
 
 var _progress2 = _interopRequireDefault(_progress);
 
@@ -6716,7 +7031,7 @@ exports.default = Controller;
 module.exports = exports['default'];
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6732,7 +7047,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -6740,7 +7055,7 @@ var _raxText = __webpack_require__(5);
 
 var _raxText2 = _interopRequireDefault(_raxText);
 
-var _progresspoint = __webpack_require__(64);
+var _progresspoint = __webpack_require__(65);
 
 var _progresspoint2 = _interopRequireDefault(_progresspoint);
 
@@ -6926,7 +7241,7 @@ exports.default = Progress;
 module.exports = exports['default'];
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6944,7 +7259,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -6952,7 +7267,7 @@ var _universalPanresponder = __webpack_require__(24);
 
 var _universalPanresponder2 = _interopRequireDefault(_universalPanresponder);
 
-var _dimensions = __webpack_require__(67);
+var _dimensions = __webpack_require__(68);
 
 var _dimensions2 = _interopRequireDefault(_dimensions);
 
@@ -7145,7 +7460,7 @@ exports.default = Point;
 module.exports = exports['default'];
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7246,7 +7561,7 @@ var TouchHistoryMath = {
 module.exports = TouchHistoryMath;
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7410,7 +7725,7 @@ var ResponderTouchHistoryStore = {
 module.exports = ResponderTouchHistoryStore;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7419,7 +7734,6 @@ module.exports = ResponderTouchHistoryStore;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -7483,7 +7797,7 @@ exports.default = Dimensions;
 module.exports = exports['default'];
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7502,7 +7816,7 @@ exports.default = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7518,7 +7832,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -7750,7 +8064,7 @@ exports.default = Video;
 module.exports = exports['default'];
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7763,8 +8077,6 @@ Object.defineProperty(exports, "__esModule", {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp;
 
 var _rax = __webpack_require__(0);
 
@@ -7786,7 +8098,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Button = (_temp = _class = function (_Component) {
+var Button = function (_Component) {
   _inherits(Button, _Component);
 
   function Button() {
@@ -7829,7 +8141,9 @@ var Button = (_temp = _class = function (_Component) {
   }]);
 
   return Button;
-}(_rax.Component), _class.propTypes = {}, _temp);
+}(_rax.Component);
+
+Button.propTypes = {};
 
 
 var styles = {
@@ -7850,7 +8164,7 @@ exports.default = Button;
 module.exports = exports['default'];
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7864,7 +8178,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -7876,7 +8190,7 @@ var _tileInput = __webpack_require__(25);
 
 var _tileInput2 = _interopRequireDefault(_tileInput);
 
-var _tileButton = __webpack_require__(18);
+var _tileButton = __webpack_require__(17);
 
 var _tileButton2 = _interopRequireDefault(_tileButton);
 
@@ -8000,7 +8314,7 @@ var InputDemo = function (_Component) {
               value: this.state.falseSwitchIsOn })
           ),
           (0, _rax.createElement)(_tileInput2.default, {
-            type: 'radio',
+            type: 'switch',
             onValueChange: function onValueChange(value) {
               return _this2.setState({ trueSwitchIsOn: value });
             },
@@ -8014,13 +8328,17 @@ var InputDemo = function (_Component) {
         (0, _rax.createElement)(
           _tileView2.default,
           { style: styles.container },
-          (0, _rax.createElement)(_tileInput2.default, { placeholder: 'Textarea Demo', multiline: true, style: {
+          (0, _rax.createElement)(_tileInput2.default, {
+            type: 'textarea',
+            style: {
               borderWidth: 2,
               borderStyle: 'solid',
               borderColor: '#CCC',
               width: 500,
               height: 150
-            } })
+            },
+            placeholder: 'Textarea Demo'
+          })
         )
       );
     }
@@ -8052,7 +8370,7 @@ exports.default = InputDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8064,8 +8382,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
-
 var _rax = __webpack_require__(0);
 
 var _raxImage = __webpack_require__(7);
@@ -8076,7 +8392,7 @@ var _raxText = __webpack_require__(5);
 
 var _raxText2 = _interopRequireDefault(_raxText);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -8095,7 +8411,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var CHECKBOX_ENABLED_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAwUExURUxpcTMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzLRwScAAAAPdFJOUwDvEI8wz69QQL/fIHCAYDHs4yUAAACoSURBVCjPfdIBDoMgDAXQ31JE1K33v60UZSJ2NjEmvvgpUIAD6aMoMMBR3YqMoBpmDDXbV1B5nApKUB3/kU9ZR1QLDcKklACPJmvCpWSSPWLbJK0e1bgNDrW4J/3iLmLbSov7oqNyjtFsM5nQUzyOc61xfKPlOOpsr4QbSb0x6uKuNqTdZovrmm+W8KDTJjhUbeGB5LS8SDcChV4GwB0bqWPzMmz/R3QHJwAPwC8jHWQAAAAASUVORK5CYII=';
 var CHECKBOX_DISABLED_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUxpcTMzMzMzMzMzMzMzMzMzMzMzMzMzM2vW5DoAAAAHdFJOUwCPEO9AzzBOX/xUAAAASklEQVQoz+2SMRKAQAwCIcmF///YaKl4tYU7Q8O2CwRTD5IBxJJlBSixcKPOFzkzUAmpnGppFCy/+qpqZ2rUJgCbTV/ZbGJ7T/QAwyIE71akwQMAAAAASUVORK5CYII=';
 
-var CheckBox = (_temp = _class = function (_Component) {
+var CheckBox = function (_Component) {
   _inherits(CheckBox, _Component);
 
   function CheckBox(props) {
@@ -8166,11 +8482,13 @@ var CheckBox = (_temp = _class = function (_Component) {
   }]);
 
   return CheckBox;
-}(_rax.Component), _class.defaultProps = {
+}(_rax.Component);
+
+CheckBox.defaultProps = {
   checked: null,
   checkedImage: CHECKBOX_ENABLED_ICON,
   uncheckedImage: CHECKBOX_DISABLED_ICON
-}, _temp);
+};
 
 
 var styles = {
@@ -8189,7 +8507,7 @@ exports.default = CheckBox;
 module.exports = exports['default'];
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8205,7 +8523,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -8353,7 +8671,7 @@ exports.default = Counter;
 module.exports = exports['default'];
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8366,8 +8684,6 @@ Object.defineProperty(exports, "__esModule", {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp2;
 
 var _rax = __webpack_require__(0);
 
@@ -8384,7 +8700,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var DEFAULT_WIDTH = 100;
 var DEFAULT_HEIGHT = 60;
 
-var Switch = (_temp2 = _class = function (_Component) {
+var Switch = function (_Component) {
   _inherits(Switch, _Component);
 
   function Switch() {
@@ -8504,11 +8820,14 @@ var Switch = (_temp2 = _class = function (_Component) {
   }]);
 
   return Switch;
-}(_rax.Component), _class.propTypes = {}, _class.defaultProps = {
+}(_rax.Component);
+
+Switch.propTypes = {};
+Switch.defaultProps = {
   onTintColor: '#00e158',
   thumbTintColor: '#ffffff',
   tintColor: '#ffffff'
-}, _temp2);
+};
 
 
 var styles = {
@@ -8522,7 +8841,7 @@ exports.default = Switch;
 module.exports = exports['default'];
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8535,8 +8854,6 @@ Object.defineProperty(exports, "__esModule", {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp2;
 
 var _rax = __webpack_require__(0);
 
@@ -8585,7 +8902,7 @@ function genEventObject(originalEvent) {
   };
 }
 
-var TextInput = (_temp2 = _class = function (_Component) {
+var TextInput = function (_Component) {
   _inherits(TextInput, _Component);
 
   function TextInput() {
@@ -8710,7 +9027,9 @@ var TextInput = (_temp2 = _class = function (_Component) {
   }]);
 
   return TextInput;
-}(_rax.Component), _class.propTypes = {}, _temp2);
+}(_rax.Component);
+
+TextInput.propTypes = {};
 
 
 var styles = {
@@ -8733,7 +9052,7 @@ exports.default = TextInput;
 module.exports = exports['default'];
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8747,7 +9066,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -8755,7 +9074,7 @@ var _tileText = __webpack_require__(4);
 
 var _tileText2 = _interopRequireDefault(_tileText);
 
-var _tilePicker = __webpack_require__(77);
+var _tilePicker = __webpack_require__(78);
 
 var _tilePicker2 = _interopRequireDefault(_tilePicker);
 
@@ -8874,7 +9193,7 @@ exports.default = PickerDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8888,15 +9207,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxPicker = __webpack_require__(78);
+var _raxPicker = __webpack_require__(79);
 
 var _raxPicker2 = _interopRequireDefault(_raxPicker);
 
-var _raxDatepicker = __webpack_require__(79);
+var _raxDatepicker = __webpack_require__(80);
 
 var _raxDatepicker2 = _interopRequireDefault(_raxDatepicker);
 
-var _raxTimepicker = __webpack_require__(80);
+var _raxTimepicker = __webpack_require__(81);
 
 var _raxTimepicker2 = _interopRequireDefault(_raxTimepicker);
 
@@ -8935,7 +9254,7 @@ exports.default = TOBCPicker;
 module.exports = exports['default'];
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8948,8 +9267,6 @@ Object.defineProperty(exports, "__esModule", {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp, _initialiseProps;
 
 var _rax = __webpack_require__(0);
 
@@ -8971,7 +9288,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Picker = (_temp = _class = function (_Component) {
+var Picker = function (_Component) {
   _inherits(Picker, _Component);
 
   function Picker(props) {
@@ -8982,9 +9299,6 @@ var Picker = (_temp = _class = function (_Component) {
     _initialiseProps.call(_this);
 
     var pickerData = _this.getPickerData();
-    _this.state = {
-      selectedLabel: pickerData.selectedLabel
-    };
     return _this;
   }
 
@@ -8992,6 +9306,11 @@ var Picker = (_temp = _class = function (_Component) {
     key: 'render',
     value: function render() {
       var _this2 = this;
+
+      var selectedValue = this.props.selectedValue;
+
+      var pickerData = this.getPickerData();
+      var selectedLabel = this.getPickerLableByValue(selectedValue, pickerData);
 
       var style = _extends({}, styles.initial, this.props.style);
       var textStyle = {
@@ -9012,18 +9331,18 @@ var Picker = (_temp = _class = function (_Component) {
           (0, _rax.createElement)(
             _raxText2.default,
             { style: textStyle },
-            this.state.selectedLabel
+            selectedLabel
           )
         );
       } else {
-        var pickerData = this.getPickerData();
+        var _pickerData = this.getPickerData();
         return (0, _rax.createElement)(
           'select',
           { style: style, onChange: function onChange(e) {
               _this2.handlePress(e.target.options.selectedIndex);
             } },
-          pickerData.items.map(function (item, index) {
-            if (index == pickerData.selectIndex) {
+          _pickerData.items.map(function (item, index) {
+            if (index == _pickerData.selectIndex) {
               return (0, _rax.createElement)(
                 'option',
                 { selected: 'selected', value: item.value },
@@ -9043,11 +9362,15 @@ var Picker = (_temp = _class = function (_Component) {
   }]);
 
   return Picker;
-}(_rax.Component), _class.propTypes = {}, _initialiseProps = function _initialiseProps() {
-  var _this3 = this;
+}(_rax.Component);
+
+Picker.propTypes = {};
+
+var _initialiseProps = function _initialiseProps() {
+  var _this4 = this;
 
   this.getPickerData = function () {
-    var _props = _this3.props,
+    var _props = _this4.props,
         children = _props.children,
         selectedValue = _props.selectedValue;
 
@@ -9095,40 +9418,47 @@ var Picker = (_temp = _class = function (_Component) {
     };
   };
 
+  this.getPickerLableByValue = function (value, pickerData) {
+    var label = '';
+    for (var i = 0; i < pickerData.items.length; i++) {
+      if (pickerData.items[i].value == value) {
+        label = pickerData.items[i].label;
+      }
+    }
+    return label;
+  };
+
   this.handlePress = function (webIndex) {
-    var _props2 = _this3.props,
+    var _props2 = _this4.props,
         onValueChange = _props2.onValueChange,
         selectedValue = _props2.selectedValue;
 
 
     if (_universalEnv.isWeex) {
       var picker = __webpack_require__(26);
-      var pickerData = _this3.getPickerData();
+      var pickerData = _this4.getPickerData();
       picker.pick({
         index: pickerData.selectIndex,
         items: pickerData.pickerLabelList
       }, function (event) {
         if (event.result === 'success') {
-          var _getPickerDataByIndex = _this3.getPickerDataByIndex(event.data, pickerData),
+          var _getPickerDataByIndex = _this4.getPickerDataByIndex(event.data, pickerData),
               value = _getPickerDataByIndex.value,
               label = _getPickerDataByIndex.label;
 
           onValueChange && onValueChange(value, pickerData.items);
-          _this3.setState({
-            selectedLabel: label
-          });
         }
       });
     } else {
-      var _pickerData = _this3.getPickerData();
+      var _pickerData2 = _this4.getPickerData();
 
-      var _getPickerDataByIndex2 = _this3.getPickerDataByIndex(webIndex, _pickerData),
+      var _getPickerDataByIndex2 = _this4.getPickerDataByIndex(webIndex, _pickerData2),
           value = _getPickerDataByIndex2.value;
 
-      onValueChange && onValueChange(value, _pickerData.items);
+      onValueChange && onValueChange(value, _pickerData2.items);
     }
   };
-}, _temp);
+};
 
 var Item = function (_Component2) {
   _inherits(Item, _Component2);
@@ -9165,7 +9495,7 @@ exports.default = Picker;
 module.exports = exports['default'];
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9224,17 +9554,11 @@ var DatePicker = function (_Component) {
         }, function (event) {
           if (event.result === 'success') {
             onDateChange && onDateChange(event.data);
-            _this.setState({
-              selectedValue: event.data
-            });
           }
         });
       }
     };
 
-    _this.state = {
-      selectedValue: props.selectedValue
-    };
     return _this;
   }
 
@@ -9268,7 +9592,7 @@ var DatePicker = function (_Component) {
           (0, _rax.createElement)(
             _raxText2.default,
             { style: textStyle },
-            this.state.selectedValue
+            selectedValue
           )
         );
       } else {
@@ -9301,7 +9625,7 @@ exports.default = DatePicker;
 module.exports = exports['default'];
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9314,8 +9638,6 @@ Object.defineProperty(exports, "__esModule", {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp;
 
 var _rax = __webpack_require__(0);
 
@@ -9337,7 +9659,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TimePicker = (_temp = _class = function (_Component) {
+var TimePicker = function (_Component) {
   _inherits(TimePicker, _Component);
 
   function TimePicker(props) {
@@ -9358,17 +9680,11 @@ var TimePicker = (_temp = _class = function (_Component) {
         }, function (event) {
           if (event.result === 'success') {
             onTimeChange && onTimeChange(event.data);
-            _this.setState({
-              selectedValue: event.data
-            });
           }
         });
       }
     };
 
-    _this.state = {
-      selectedValue: props.selectedValue
-    };
     return _this;
   }
 
@@ -9400,7 +9716,7 @@ var TimePicker = (_temp = _class = function (_Component) {
           (0, _rax.createElement)(
             _raxText2.default,
             { style: textStyle },
-            this.state.selectedValue
+            selectedValue
           )
         );
       } else {
@@ -9416,7 +9732,9 @@ var TimePicker = (_temp = _class = function (_Component) {
   }]);
 
   return TimePicker;
-}(_rax.Component), _class.propTypes = {}, _temp);
+}(_rax.Component);
+
+TimePicker.propTypes = {};
 
 
 var styles = {
@@ -9431,7 +9749,7 @@ exports.default = TimePicker;
 module.exports = exports['default'];
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9447,7 +9765,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -9600,20 +9918,6 @@ var TextDemo = function (_Component) {
             { style: { textDecoration: 'line-through' } },
             'Solid line-through'
           )
-        ),
-        (0, _rax.createElement)(
-          _tileText2.default,
-          { style: styles.title },
-          '\u884C\u9AD8\u63A7\u5236'
-        ),
-        (0, _rax.createElement)(
-          _tileView2.default,
-          { style: styles.container },
-          (0, _rax.createElement)(
-            _tileText2.default,
-            { style: { lineHeight: '120rem' } },
-            'line-height: A lot of space between the lines of this long passage that should wrap once.'
-          )
         )
       );
     }
@@ -9650,7 +9954,7 @@ exports.default = TextDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9664,7 +9968,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -9676,7 +9980,7 @@ var _tileImage = __webpack_require__(10);
 
 var _tileImage2 = _interopRequireDefault(_tileImage);
 
-var _tileButton = __webpack_require__(18);
+var _tileButton = __webpack_require__(17);
 
 var _tileButton2 = _interopRequireDefault(_tileButton);
 
@@ -9928,7 +10232,7 @@ exports.default = ButtonDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9942,7 +10246,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -10034,7 +10338,7 @@ exports.default = SwitchDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10050,7 +10354,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -10058,7 +10362,7 @@ var _tileText = __webpack_require__(4);
 
 var _tileText2 = _interopRequireDefault(_tileText);
 
-var _tileListview = __webpack_require__(85);
+var _tileListview = __webpack_require__(86);
 
 var _tileListview2 = _interopRequireDefault(_tileListview);
 
@@ -10233,7 +10537,7 @@ exports.default = ListViewDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10245,7 +10549,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _rax = __webpack_require__(0);
 
-var _raxListview = __webpack_require__(86);
+var _raxListview = __webpack_require__(87);
 
 var _raxListview2 = _interopRequireDefault(_raxListview);
 
@@ -10255,7 +10559,7 @@ exports.default = _raxListview2.default;
 module.exports = exports['default'];
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10269,13 +10573,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp2;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -10293,7 +10595,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var SCROLLVIEW_REF = 'scrollview';
 
-var ListView = (_temp2 = _class = function (_Component) {
+var ListView = function (_Component) {
   _inherits(ListView, _Component);
 
   function ListView() {
@@ -10346,17 +10648,20 @@ var ListView = (_temp2 = _class = function (_Component) {
   }]);
 
   return ListView;
-}(_rax.Component), _class.propTypes = {}, _class.defaultProps = {
+}(_rax.Component);
+
+ListView.propTypes = {};
+ListView.defaultProps = {
   renderScrollComponent: function renderScrollComponent(props) {
     return (0, _rax.createElement)(_raxRecyclerview2.default, props);
   },
   dataSource: []
-}, _temp2);
+};
 exports.default = ListView;
 module.exports = exports['default'];
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10370,7 +10675,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -10446,7 +10751,7 @@ var Row = function (_Component2) {
     value: function render() {
       return (0, _rax.createElement)(
         _tileView2.default,
-        { clickable: true, onPress: this.handleClick },
+        { onClick: this.handleClick },
         (0, _rax.createElement)(
           _tileView2.default,
           { style: styles.row },
@@ -10627,7 +10932,7 @@ exports.default = RecyclerViewDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10641,7 +10946,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -10649,7 +10954,7 @@ var _tileText = __webpack_require__(4);
 
 var _tileText2 = _interopRequireDefault(_tileText);
 
-var _tileWaterfall = __webpack_require__(89);
+var _tileWaterfall = __webpack_require__(90);
 
 var _tileWaterfall2 = _interopRequireDefault(_tileWaterfall);
 
@@ -10834,7 +11139,7 @@ exports.default = WaterfallDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10846,7 +11151,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _rax = __webpack_require__(0);
 
-var _raxWaterfall = __webpack_require__(90);
+var _raxWaterfall = __webpack_require__(91);
 
 var _raxWaterfall2 = _interopRequireDefault(_raxWaterfall);
 
@@ -10856,7 +11161,7 @@ exports.default = _raxWaterfall2.default;
 module.exports = exports['default'];
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10874,15 +11179,15 @@ var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
-var _raxScrollview = __webpack_require__(16);
+var _raxScrollview = __webpack_require__(23);
 
 var _raxScrollview2 = _interopRequireDefault(_raxScrollview);
 
-var _raxRefreshcontrol = __webpack_require__(17);
+var _raxRefreshcontrol = __webpack_require__(13);
 
 var _raxRefreshcontrol2 = _interopRequireDefault(_raxRefreshcontrol);
 
@@ -11115,7 +11420,7 @@ exports.default = Waterfall;
 module.exports = exports['default'];
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11129,7 +11434,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -11228,145 +11533,6 @@ exports.default = LinkDemo;
 module.exports = exports['default'];
 
 /***/ }),
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _rax = __webpack_require__(0);
-
-var _tileView = __webpack_require__(2);
-
-var _tileView2 = _interopRequireDefault(_tileView);
-
-var _tileText = __webpack_require__(4);
-
-var _tileText2 = _interopRequireDefault(_tileText);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TouchableHighlightDemo = function (_Component) {
-  _inherits(TouchableHighlightDemo, _Component);
-
-  function TouchableHighlightDemo() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, TouchableHighlightDemo);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TouchableHighlightDemo.__proto__ || Object.getPrototypeOf(TouchableHighlightDemo)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      eventLog: []
-    }, _this._appendEvent = function (eventName) {
-      var limit = 6;
-      var eventLog = _this.state.eventLog.slice(0, limit - 1);
-      eventLog.unshift(eventName);
-      _this.setState({ eventLog: eventLog });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(TouchableHighlightDemo, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return (0, _rax.createElement)(
-        _tileView2.default,
-        { style: styles.container },
-        (0, _rax.createElement)(
-          _tileView2.default,
-          { clickable: true,
-            onPress: function onPress() {
-              return _this2._appendEvent('press');
-            },
-            delayPressIn: 400,
-            onPressIn: function onPressIn() {
-              return _this2._appendEvent('pressIn - 400ms delay');
-            },
-            delayPressOut: 1000,
-            onPressOut: function onPressOut() {
-              return _this2._appendEvent('pressOut - 1000ms delay');
-            },
-            delayLongPress: 800,
-            onLongPress: function onLongPress() {
-              return _this2._appendEvent('longPress - 800ms delay');
-            },
-            style: {
-              width: '230rem',
-              height: '60rem',
-              paddingTop: '12rem',
-              paddingBottom: '12rem',
-              paddingLeft: '25rem',
-              paddingRight: '25rem',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: '#efefef'
-            } },
-          (0, _rax.createElement)(
-            _tileText2.default,
-            null,
-            'Touch Me'
-          )
-        ),
-        (0, _rax.createElement)(
-          _tileView2.default,
-          { style: styles.eventLogBox },
-          this.state.eventLog.map(function (e, ii) {
-            return (0, _rax.createElement)(
-              _tileText2.default,
-              { key: ii },
-              e
-            );
-          })
-        )
-      );
-    }
-  }]);
-
-  return TouchableHighlightDemo;
-}(_rax.Component);
-
-var styles = {
-  container: {
-    padding: 20,
-    borderStyle: 'solid',
-    borderColor: '#dddddd',
-    borderWidth: 1,
-    marginLeft: 20,
-    marginRight: 20,
-    marginBottom: 10
-  },
-  eventLogBox: {
-    padding: 10,
-    margin: 10,
-    height: 260,
-    borderWidth: 1,
-    borderColor: '#f0f0f0',
-    backgroundColor: '#f9f9f9'
-  }
-};
-
-exports.default = TouchableHighlightDemo;
-module.exports = exports['default'];
-
-/***/ }),
 /* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11381,7 +11547,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -11518,15 +11684,12 @@ module.exports = exports['default'];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp2;
-
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -11561,7 +11724,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var DEVICE_WIDTH = 750;
 var VIEW_INDEX = 2;
 
-var Calendar = (_temp2 = _class = function (_Component) {
+var Calendar = function (_Component) {
   _inherits(Calendar, _Component);
 
   function Calendar() {
@@ -11790,7 +11953,9 @@ var Calendar = (_temp2 = _class = function (_Component) {
   }]);
 
   return Calendar;
-}(_rax.Component), _class.propTypes = {
+}(_rax.Component);
+
+Calendar.propTypes = {
   customStyle: _rax.PropTypes.object,
   dayHeadings: _rax.PropTypes.array,
   eventDates: _rax.PropTypes.array,
@@ -11810,7 +11975,8 @@ var Calendar = (_temp2 = _class = function (_Component) {
   dateFormat: _rax.PropTypes.string,
   today: _rax.PropTypes.any,
   weekStart: _rax.PropTypes.number
-}, _class.defaultProps = {
+};
+Calendar.defaultProps = {
   customStyle: {},
   dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   eventDates: [],
@@ -11822,7 +11988,7 @@ var Calendar = (_temp2 = _class = function (_Component) {
   dateFormat: 'YYYY-MM-DD',
   today: (0, _moment2.default)(),
   weekStart: 1
-}, _temp2);
+};
 exports.default = Calendar;
 module.exports = exports['default'];
 
@@ -11836,15 +12002,12 @@ module.exports = exports['default'];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp2;
-
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -11868,7 +12031,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Day = (_temp2 = _class = function (_Component) {
+var Day = function (_Component) {
   _inherits(Day, _Component);
 
   function Day() {
@@ -11957,9 +12120,12 @@ var Day = (_temp2 = _class = function (_Component) {
   }]);
 
   return Day;
-}(_rax.Component), _class.defaultProps = {
+}(_rax.Component);
+
+Day.defaultProps = {
   customStyle: {}
-}, _class.propTypes = {
+};
+Day.propTypes = {
   caption: _rax.PropTypes.any,
   customStyle: _rax.PropTypes.object,
   filler: _rax.PropTypes.bool,
@@ -11970,7 +12136,7 @@ var Day = (_temp2 = _class = function (_Component) {
   isDisabled: _rax.PropTypes.bool,
   onPress: _rax.PropTypes.func,
   usingEvents: _rax.PropTypes.bool
-}, _temp2);
+};
 exports.default = Day;
 module.exports = exports['default'];
 
@@ -12256,6 +12422,8 @@ function formatMoment(m) {
 
   return formatFunctions[format](m);
 }
+exports['default'] = module.exports;
+exports.default = module.exports;
 
 /***/ }),
 /* 99 */
@@ -12272,7 +12440,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -12437,15 +12605,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp2;
-
 var _rax = __webpack_require__(0);
 
 var _raxText = __webpack_require__(5);
 
 var _raxText2 = _interopRequireDefault(_raxText);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -12486,7 +12652,7 @@ function addZero(num, timeWrapStyle, timeBackground, timeBackgroundStyle, timeSt
   );
 };
 
-var Index = (_temp2 = _class = function (_Component) {
+var Index = function (_Component) {
   _inherits(Index, _Component);
 
   function Index() {
@@ -12603,6 +12769,10 @@ var Index = (_temp2 = _class = function (_Component) {
       var isMinutes = new RegExp('{m}').test(tpl);
       var isSeconds = new RegExp('{s}').test(tpl);
 
+      hours = !isDay && days ? hours + 24 * days : hours;
+      minutes = !isHours && hours ? minutes + 60 * hours : minutes;
+      seconds = !isMinutes && minutes ? seconds + 60 * minutes : seconds;
+
       var tplIndexOfDay = tpl.indexOf('d');
       var tplIndexOfHours = tpl.indexOf('h');
       var tplIndexOfMinutes = tpl.indexOf('m');
@@ -12640,7 +12810,9 @@ var Index = (_temp2 = _class = function (_Component) {
   }]);
 
   return Index;
-}(_rax.Component), _class.propTypes = {
+}(_rax.Component);
+
+Index.propTypes = {
   formatFunc: _rax.PropTypes.func,
   onTick: _rax.PropTypes.func,
   onComplete: _rax.PropTypes.func,
@@ -12653,11 +12825,12 @@ var Index = (_temp2 = _class = function (_Component) {
   timeBackground: _rax.PropTypes.string,
   timeBackgroundStyle: _rax.PropTypes.object,
   interval: _rax.PropTypes.number
-}, _class.defaultProps = {
+};
+Index.defaultProps = {
   tpl: '{d}天{h}时{m}分{s}秒',
   timeRemaining: 0,
   interval: 1000
-}, _temp2);
+};
 
 
 var styles = {
@@ -12692,7 +12865,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -12744,7 +12917,6 @@ var GotopDemo = function (_Component) {
         (0, _rax.createElement)(
           _tileView2.default,
           { style: styles.container },
-          (0, _rax.createElement)(_tileImage2.default, { style: styles.icon, source: { uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABCCAYAAAAL1LXDAAAClElEQVR42u3YS4vTUBQH8PgWdK8rty5dCy79For3Jt5761R7z52xI7rLB3AhLoTRcXwMKlYUH/gAd25duXYp6AeYjYJOzR+EQO1JaKNtmpw/hLYntzS/np40beQcHVHWv1eGfijjh03cYIMR1gh3UGzDBivAWy0Cb7Wuw+2bYYlEIpEwGQ6HO5Tzl5T1X7Tx37QN13Sa7m8u1vi10a8Mbekd0G3A5mjj3/Z61/c1Bqst3Sy/CqI3QDcSy3eaXqdpureZWL7Tr4BexJm9VYrjZ/ol0M3E8p1+4dzankX4GK/zEPo8pvYxu/05ttPWPwd6IbHa0Kp2If2rjpoNp7SlX0ynnwG9cFis48DYF3foNNDM859mM727Rlh/uwxbBkYSQ2f4TvsnQNcaG9vQx7pycJ7YecWhs/pgbujshXcqQxtl2EnBSNzxcUGnHw8Gg121wipHF7FuWjCibUiy/dtMpx8BPTOstnSnDFsVjChDZzm0svQQ6LlitQ0rWFcNPNppsmynDT0AukbY6mAkW+fYThvaxLH9e6wJdzls7GgZ66qCizvtz/Ez7e/n6Fpgq4OR2IUl7jhwjDm6AlZZuleGnRUYUSacZ9HZyFVCa0eXC97RgDWzBOedpgsFP1A2cEE0FVgZ+lSEnRcYUY58QafXp0LjH8UxJwjCvnmDERwLO26GrkaTJumsHMP/x3+g33GmRL0uYATnEQa9rburh6NJ0+2mB5NOOG6IDuFx3cAIru7GoZMlOhpVSV3BCH6sjIzeB8xxY8FIYpdPKkM38O3S7/cPoNZAMB8BC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWcLvBsQ1XRsGoNRacODoxCkYtanK0DT1l6Ss23I8k/ze/AcSDH16N8PnHAAAAAElFTkSuQmCC' } }),
           (0, _rax.createElement)(
             _tileText2.default,
             null,
@@ -12761,7 +12933,7 @@ var GotopDemo = function (_Component) {
 var styles = {
   container: {
     padding: 20,
-    paddingBottom: 1000,
+    paddingBottom: 1400,
     borderStyle: 'solid',
     borderColor: '#dddddd',
     borderWidth: 1,
@@ -12815,13 +12987,12 @@ module.exports = exports['default'];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -12868,7 +13039,7 @@ var GoTop = function (_Component) {
 
       onPress && onPress();
       if (_universalEnv.isWeex) {
-        var dom = __webpack_require__(15);
+        var dom = __webpack_require__(16);
         var top = (0, _rax.findDOMNode)('rx-top');
 
         dom.scrollToElement(top.ref, {
@@ -13114,7 +13285,7 @@ var AnimatedTemplate = __webpack_require__(113);
 var AnimatedTracking = __webpack_require__(114);
 var isAnimated = __webpack_require__(115);
 
-var Animation = __webpack_require__(14);
+var Animation = __webpack_require__(15);
 var TimingAnimation = __webpack_require__(116);
 var DecayAnimation = __webpack_require__(119);
 var SpringAnimation = __webpack_require__(120);
@@ -13521,8 +13692,8 @@ module.exports = {
     ApplyAnimatedValues: __webpack_require__(39).inject,
     InteractionManager: __webpack_require__(36).inject,
     FlattenStyle: __webpack_require__(38).inject,
-    RequestAnimationFrame: __webpack_require__(21).inject,
-    CancelAnimationFrame: __webpack_require__(22).inject
+    RequestAnimationFrame: __webpack_require__(20).inject,
+    CancelAnimationFrame: __webpack_require__(21).inject
   },
 
   __PropsOnlyForTests: __webpack_require__(37)
@@ -14009,7 +14180,7 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 var Animated=__webpack_require__(6);
 var AnimatedValue=__webpack_require__(11);
 var AnimatedWithChildren=__webpack_require__(9);
-var invariant=__webpack_require__(20);
+var invariant=__webpack_require__(19);
 var guid=__webpack_require__(27);var
 
 
@@ -14175,8 +14346,8 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 var AnimatedWithChildren=__webpack_require__(9);
 var Animated=__webpack_require__(6);
 var AnimatedValue=__webpack_require__(11);
-var Interpolation=__webpack_require__(13);
-var AnimatedInterpolation=__webpack_require__(19);var
+var Interpolation=__webpack_require__(14);
+var AnimatedInterpolation=__webpack_require__(18);var
 
 
 
@@ -14259,8 +14430,8 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 var AnimatedWithChildren=__webpack_require__(9);
 var Animated=__webpack_require__(6);
 var AnimatedValue=__webpack_require__(11);
-var AnimatedInterpolation=__webpack_require__(19);
-var Interpolation=__webpack_require__(13);var
+var AnimatedInterpolation=__webpack_require__(18);
+var Interpolation=__webpack_require__(14);var
 
 
 
@@ -14342,8 +14513,8 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 
 var Animated=__webpack_require__(6);
 var AnimatedWithChildren=__webpack_require__(9);
-var AnimatedInterpolation=__webpack_require__(19);
-var Interpolation=__webpack_require__(13);var
+var AnimatedInterpolation=__webpack_require__(18);
+var Interpolation=__webpack_require__(14);var
 
 
 
@@ -14570,11 +14741,11 @@ module.exports=isAnimated;
 
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
-var Animation=__webpack_require__(14);
+var Animation=__webpack_require__(15);
 var AnimatedValue=__webpack_require__(11);
 var Easing=__webpack_require__(117);
-var RequestAnimationFrame=__webpack_require__(21);
-var CancelAnimationFrame=__webpack_require__(22);
+var RequestAnimationFrame=__webpack_require__(20);
+var CancelAnimationFrame=__webpack_require__(21);
 
 
 
@@ -14947,9 +15118,9 @@ return calcBezier(getTForX(x),mY1,mY2);
 
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
-var Animation=__webpack_require__(14);
-var RequestAnimationFrame=__webpack_require__(21);
-var CancelAnimationFrame=__webpack_require__(22);var
+var Animation=__webpack_require__(15);
+var RequestAnimationFrame=__webpack_require__(20);
+var CancelAnimationFrame=__webpack_require__(21);var
 
 
 
@@ -15036,11 +15207,11 @@ module.exports=DecayAnimation;
 
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
-var Animation=__webpack_require__(14);
+var Animation=__webpack_require__(15);
 var AnimatedValue=__webpack_require__(11);
-var RequestAnimationFrame=__webpack_require__(21);
-var CancelAnimationFrame=__webpack_require__(22);
-var invariant=__webpack_require__(20);
+var RequestAnimationFrame=__webpack_require__(20);
+var CancelAnimationFrame=__webpack_require__(21);
+var invariant=__webpack_require__(19);
 var SpringConfig=__webpack_require__(121);
 
 
@@ -15928,7 +16099,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -16166,7 +16337,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -16236,7 +16407,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -16296,7 +16467,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -16308,7 +16479,7 @@ var _tileImage = __webpack_require__(10);
 
 var _tileImage2 = _interopRequireDefault(_tileImage);
 
-var _tileButton = __webpack_require__(18);
+var _tileButton = __webpack_require__(17);
 
 var _tileButton2 = _interopRequireDefault(_tileButton);
 
@@ -16476,7 +16647,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -16702,11 +16873,8 @@ module.exports = exports['default'];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp;
 
 var _rax = __webpack_require__(0);
 
@@ -16729,7 +16897,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var AnimatedView = _raxAnimated2.default.View;
-var Modal = (_temp = _class = function (_Component) {
+
+var Modal = function (_Component) {
   _inherits(Modal, _Component);
 
   function Modal(props) {
@@ -16837,13 +17006,16 @@ var Modal = (_temp = _class = function (_Component) {
   }]);
 
   return Modal;
-}(_rax.Component), _class.propTypes = {
+}(_rax.Component);
+
+Modal.propTypes = {
   onHide: _rax.PropTypes.func,
   onShow: _rax.PropTypes.func,
   visible: _rax.PropTypes.bool
-}, _class.defaultProps = {
+};
+Modal.defaultProps = {
   visible: false
-}, _temp);
+};
 exports.default = Modal;
 
 
@@ -16882,7 +17054,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -17046,7 +17218,7 @@ var _rax = __webpack_require__(0);
 
 var _raxGrid = __webpack_require__(40);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -17150,7 +17322,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -17280,7 +17452,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -17379,7 +17551,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _tileView = __webpack_require__(2);
+var _tileView = __webpack_require__(3);
 
 var _tileView2 = _interopRequireDefault(_tileView);
 
@@ -17557,8 +17729,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp2;
-
 var _rax = __webpack_require__(0);
 
 var _universalEnv = __webpack_require__(1);
@@ -17570,11 +17740,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var SliderWeb = void 0;
-if (_universalEnv.isWeb) {
+if (!_universalEnv.isWeex) {
   SliderWeb = __webpack_require__(145);
 }
 
-var Slider = (_temp2 = _class = function (_Component) {
+var Slider = function (_Component) {
   _inherits(Slider, _Component);
 
   function Slider() {
@@ -17657,10 +17827,12 @@ var Slider = (_temp2 = _class = function (_Component) {
   }]);
 
   return Slider;
-}(_rax.Component), _class.defaultProps = {
+}(_rax.Component);
+
+Slider.defaultProps = {
   onChange: function onChange() {},
   defaultPaginationStyle: defaultPaginationStyle
-}, _temp2);
+};
 
 
 var defaultPaginationStyle = {
@@ -17692,7 +17864,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 
@@ -17809,7 +17981,11 @@ var Slider = function (_Component) {
       this.index = 0;
       this.height = height;
       // TODO: Avoid convert unit in component
-      this.width = parseFloat(width) * document.documentElement.clientWidth / 750;
+      try {
+        this.width = parseFloat(width) * document.documentElement.clientWidth / 750;
+      } catch (err) {
+        this.width = parseFloat(width);
+      }
       this.loopIdx = 0;
       this.total = children.length;
     }
@@ -18025,7 +18201,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _rax = __webpack_require__(0);
 
-var _raxView = __webpack_require__(3);
+var _raxView = __webpack_require__(2);
 
 var _raxView2 = _interopRequireDefault(_raxView);
 

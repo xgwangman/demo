@@ -2900,7 +2900,9 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var env = __webpack_require__(31);
+	var _universalEnv = __webpack_require__(31);
+
+	var env = __webpack_require__(32);
 	var fetch = __webpack_require__(33);
 	var geolocation = __webpack_require__(34);
 	var mtop = __webpack_require__(37);
@@ -2913,7 +2915,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	var user = __webpack_require__(54);
 	var wangwang = __webpack_require__(58);
 
-	if (env.isWeb && !window.Promise) {
+	if (_universalEnv.isWeb && !window.Promise) {
 	  window.console && window.console.error && window.console.error(("[Tile Error]") + ' \u8BF7\u5148\u5F15\u5165 lib.promise \u5E93\uFF08' + ("https://g.alicdn.com/mtb/lib-promise/3.1.3/polyfillB.js") + '\uFF09');
 	}
 
@@ -2937,21 +2939,6 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 /***/ }),
 /* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _universalEnv = __webpack_require__(32);
-
-	module.exports = {
-	  isWeex: _universalEnv.isWeex,
-	  isWeb: _universalEnv.isWeb,
-	  isReactNative: _universalEnv.isReactNative,
-	  isNode: _universalEnv.isNode
-	};
-
-/***/ }),
-/* 32 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2975,6 +2962,21 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	var isReactNative = exports.isReactNative = typeof __fbBatchedBridgeConfig !== 'undefined';
 	exports['default'] = module.exports;
 	exports.default = module.exports;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _universalEnv = __webpack_require__(31);
+
+	module.exports = {
+	  isWeex: _universalEnv.isWeex,
+	  isWeb: _universalEnv.isWeb,
+	  isReactNative: _universalEnv.isReactNative,
+	  isNode: _universalEnv.isNode
+	};
 
 /***/ }),
 /* 33 */
@@ -3002,7 +3004,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var Windvane = __webpack_require__(35);
 
@@ -3046,7 +3048,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	  value: true
 	});
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var WV = {};
 
@@ -3106,7 +3108,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	module.exports = {
 	  request: function request(options, success, error) {
@@ -3162,7 +3164,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	  value: true
 	});
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	// From https://github.com/camsong/fetch-jsonp
 	var defaultOptions = {
@@ -3281,7 +3283,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var navigator = void 0;
 
@@ -3377,7 +3379,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var Windvane = __webpack_require__(35);
 
@@ -3431,7 +3433,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var WindVane = __webpack_require__(35);
 
@@ -3469,7 +3471,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3639,7 +3641,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 	  value: true
 	});
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var LONG_DELAY = 3500; // 3.5 seconds
 	var SHORT_DELAY = 2000; // 2 seconds
@@ -3782,7 +3784,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var User = void 0;
 	if (_universalEnv.isWeex) {
@@ -3916,7 +3918,7 @@ define("index.bundle", function(require) {/******/ (function(modules) { // webpa
 
 	'use strict';
 
-	var _universalEnv = __webpack_require__(32);
+	var _universalEnv = __webpack_require__(31);
 
 	var _base64Utf8Transfer = __webpack_require__(59);
 

@@ -1,0 +1,22 @@
+{
+  "web": [
+    "npm/rax/0.4.20/index.web",
+    "tile-components/view/0.0.1/index.min.cmd.js",
+    "tile-components/image/0.0.1/index.min.cmd.js",
+    "tile-components/scrollview/0.0.1/index.min.cmd.js",
+    "tile-components/text/0.0.1/index.min.cmd.js",
+    "tile-components/input/0.0.1/index.min.cmd.js",
+    "tile-components/icon/0.0.1/index.min.cmd.js",
+    "tile-components/tile-modules/0.0.2/index.web.js"
+  ],
+  "native": [
+    "npm/rax/0.4.20/index.weex",
+    "tile-components/view/0.0.1/index.min.cmd.js",
+    "tile-components/image/0.0.1/index.min.cmd.js",
+    "tile-components/scrollview/0.0.1/index.min.cmd.js",
+    "tile-components/text/0.0.1/index.min.cmd.js",
+    "tile-components/input/0.0.1/index.min.cmd.js",
+    "tile-components/icon/0.0.1/index.min.cmd.js",
+    "tile-components/tile-modules/0.0.2/index.weex.js"
+  ]
+}

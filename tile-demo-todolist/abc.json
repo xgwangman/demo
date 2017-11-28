@@ -1,0 +1,18 @@
+{
+  "source": "tbo",
+  "type": "module",
+  "editor": "wangpu",
+  "options": {
+    "groupName": "mods"
+  },
+  "assets": {
+    "type": "builder",
+    "builder": {
+      "name": "@ali/builder-shop-air-wangpu"
+    }
+  },
+  "projectinfo": {
+    "bu": "abs-isv",
+    "type": "mod"
+  }
+}

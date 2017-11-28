@@ -25,6 +25,9 @@
 <body>
   <script src="//g.alicdn.com/tmapp/animation-data/4.1.37/jc/tools/vconsole.min.js"></script>
   <script src="./web-rax-framework.js"></script>
-  <script src="./build/index.bundle.js"></script>
+  <script>
+    var bundle = /github|alidemo|0.0.0.0|127.0.0.1/.test(location.hostname) ? './build/index.bundle.js' : '/index.bundle.js';
+    document.write('<script src="' + bundle + '"></' + 'script>');
+  </script>
 </body>
 </html>
